@@ -1,0 +1,202 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.45\textwidth} % 45% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% If your name is very short, use just one of the lines below
+	% If your name is very long, reduce the font size or make the minipage wider and reduce the others proportionately
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Willem}}}}} % First name
+	
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Vanhulle}}}}} % Last name
+	
+	\vspace{6pt}
+	
+	{\huge Mathematician} % Career or current job title
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\icon{MapMarker}{12}{Ghent, Belgium}\\
+	\icon{Phone}{12}{+32 479 080 252}\\
+	
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	%\icon{Globe}{12}{\href{https://alyx.vance.me}{alyx.vance.me}}\\
+	\icon{At}{12}{\href{mailto:willemvanhulle@protonmail.com}{willemvanhulle@pm.me}}\\	
+	\icon{Github}{12}{\href{https://github.com/wvhulle}{github.com/wvhulle}}\\
+	%\icon{Twitter}{12}{\href{https://twitter.com/@alyxvance}{@alyxvance}}\\
+\end{minipage}
+
+\vspace{0.5cm}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+\cvsect{Who Am I?}
+
+\begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	I have a solid knowledge of statistics and neural networks, which might help your company to make the right decisions. Having additional knowledge of physics, I can develop precise models for complex physical problems.
+
+    Experienced in lecturing mathematics on all levels and serving in several coordinating volunteer roles, my communication is professional, clear and well-organized. % Dummy text
+\end{minipage}
+\hfill % Whitespace between
+\begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\vspace{-1.8cm}\raggedright
+	\begin{barchart}{5.5}
+		\baritem{TypeScript}{60}
+%		\baritem{PHP}{100}
+%		\baritem{SASS/LESS}{70}
+%		\baritem{Bootstrap}{70}
+		\baritem{Bash}{50}
+
+		\baritem{Python}{70}
+		\baritem{Java}{40}
+		\baritem{PostgreSQL}{50}
+		\baritem{R}{40}
+		\baritem{Julia}{70}
+		\baritem{Agda}{50}
+		\baritem{HTML}{60}
+		\baritem{Googling}{80}
+		
+	\end{barchart}
+\end{minipage}
+
+\begin{center}
+	\bubbles{2/Vue, 3/Django,  4/Svelte, 4/Git, 5/Debian,  4/SSH, 3/Security, 3/LXC, 3/Docker,  3/CI, 2/Sage }
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsect{Experience}
+
+\begin{entrylist}
+	\entry
+		{2021 -- \\\footnotesize{full-time}}
+		{Full-stack Software Engineer}
+		{Specialty Carbohydrates Inbiose}
+		{Improves data analytics pipeline of a biotechnology lab. Learned biotech. and chemistry concepts after-work. Builds interactive data-intensive applications.\\ \texttt{VS Code }\slashsep\texttt{DBeaver}\slashsep\texttt{Neo4j}}
+	\entry
+		{2020 -- 2021\\\footnotesize{part-time}}
+		{Mathematics lecturer}
+		{Adult high-school Volt}
+		{Showed care, gave clear explanations and constructive feedback to foreign students. Wrote software to generate challenging problem sheets.\\ \texttt{Python}\slashsep\texttt{SymPy}\slashsep\texttt{\LaTeX}}
+% 	\entry
+% 		{2014 -- 2019\\\footnotesize{part-time}}
+% 		{Mathematics tutor}
+% 		{Freelance}
+% 		{Explained calculus, geometry and linear algebra to children and young adults. Improved outcomes for mathematics tests and exams.
+		
+% 		%\\ \texttt{PHP}\slashsep\texttt{JS}\slashsep\texttt{MariaDB}\slashsep\texttt{Linux}
+		
+% 		}
+% 	\entry
+% 		{2013 -- 2014\\\footnotesize{part time}}
+% 		{Junior PHP Developer}
+% 		{example.com}
+% 		{\lorem\lorem\\ \texttt{PHP}\slashsep\texttt{Laravel}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry
+		{2019 -- 2021}
+		{Master of theoretical physics (partial)}
+		{KU Leuven, Belgium}
+		{Data mining and deep learning, advanced stochastic Monte Carlo methods, general relativity, particle physics, analytical mechanics, quantum mechanics, solid state physics.\\ \texttt{JavaScript}\slashsep\texttt{Matlab}\slashsep\texttt{Mathematica}\slashsep\texttt{Julia}\slashsep\texttt{PyTorch}}
+	\entry
+		{2017--2019}
+		{Master of pure mathematics}
+		{KU Leuven, Belgium}
+		{
+		Differential and Riemannian geometry, Riemann surfaces, operator algebras, group theory, algebraic topology, functional analysis.
+		\\
+		\\Thesis: formalisation and verification of topological and algebraic mathematical proofs in a high-level functional programming language.\\   \texttt{Haskell}\slashsep\texttt{Agda}\slashsep\texttt{Linux}\slashsep\texttt{Python}}
+	\entry
+		{2013 -- 2017}
+		{Bachelor of mathematics}
+		{VU Brussel, Belgium}
+		{Stochastic processes, commutative algebra, advanced data structures, numerical mathematics, mathematical statistics, databases.\\   \texttt{SQL}\slashsep\texttt{Java}\slashsep\texttt{Lisp}\slashsep\texttt{R}\slashsep\texttt{Python}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Languages}
+	
+	\textbf{English} - Professional\\
+	\textbf{Dutch} - Native\\
+	\textbf{French} - Professional\\
+	\textbf{Chinese} - Conversational\\
+	\textbf{German} - Conversational
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Hobbies}
+	
+	I love long-distance solo backpacking, sci-fi books (Stephenson, Baxter) and social dancing (Forro, Swingrock, Kizomba, Bachata).
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Non profit}
+	
+	I helped international students to feel at home with practical assistance, social events, photography and language exchange.
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
