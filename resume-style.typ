@@ -1,26 +1,5 @@
-#let target-pages = 2
-
-// More restrictive thresholds for better page fitting
-#let priority-threshold(target-pages) = {
-  if target-pages == 1 { 1 } else if target-pages == 2 { 2 } else { 5 }
-}
-
-#let item-threshold(target-pages) = {
-  if target-pages == 1 { 1 } else if target-pages == 2 { 2 } else { 5 }
-}
-
-// Adaptive content limits based on estimated content density
-#let max-experience-entries(target-pages) = {
-  if target-pages == 1 { 2 } else if target-pages == 2 { 3 } else { 5 }
-}
-
-#let max-projects(target-pages) = {
-  if target-pages == 1 { 1 } else if target-pages == 2 { 3 } else { 5 }
-}
-
-#let max-hobby-projects(target-pages) = {
-  if target-pages == 1 { 1 } else if target-pages == 2 { 2 } else { 5 }
-}
+// Import configuration
+#import "resume-length.typ": target-pages, priority-threshold, item-threshold, max-experience-entries, max-projects, max-hobby-projects
 
 #let resume(
   name: "",
