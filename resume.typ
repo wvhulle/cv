@@ -3,9 +3,9 @@
 #show: resume.with(
   name: "Willem Vanhulle",
   email: "willemvanhulle@protonmail.com",
-  website: "willemvanhulle.tech",
+  website: "www.willemvanhulle.tech",
   phone: "+32 479 080 252",
-  target-pages: 2,
+  target-pages: 1,
 )
 
 #section("Experience")[
@@ -14,6 +14,7 @@
     location: "Ghent, Belgium",
     title: "Mid-level software engineer",
     start-date: "Apr. 2024",
+    end-date: "June 2025",
     priority: 1,
     items: (
       pitem(
@@ -30,15 +31,15 @@
       ),
       pitem(
         [*Testing:* Implemented comprehensive unit/integration test suites for safety-critical railway systems.],
-        priority: 2,
+        priority: 3,
       ),
       pitem(
         [*Real-time interfaces:* Built multi-monitor native GUIs with streaming data table widgets and geographical map rendering using Slint. (#lang("Rust"))],
-        priority: 2,
+        priority: 3,
       ),
       pitem(
         [*Embedded systems:* Developed software for real-time hardware control (touchscreens, physical levers, sensors).],
-        priority: 2,
+        priority: 3,
       ),
     ),
   )
@@ -53,10 +54,10 @@
     items: (
       pitem(
         [*Full-stack development:* Built data collection platform with time-series visualization, implemented type-safe large-scale web applications. (#lang("TypeScript"), #lang("JavaScript"), #lang("HTML"), #lang("SCSS"))],
-        priority: 2,
+        priority: 3,
       ),
       pitem(
-        [*Robotics & embedded:* Built industrial fermentation robots, interfaced with legacy hardware (25+ years) and modern sensors, migrated to async programming. (#lang("Python"), #lang("Rust"))],
+        [*Robotics & embedded:* Built industrial fermentation robots, interfaced with legacy hardware (25+ years) and modern sensors, migrated to async programming. (#lang("Python"), #lang("Rust"), #lang("C++"))],
         priority: 1,
       ),
       pitem(
@@ -65,15 +66,15 @@
       ),
       pitem(
         [*Database systems:* Designed high-performance scientific databases (PostgreSQL, Neo4j), modeled complex scientific processes. (#lang("R"), #lang("SQL"))],
-        priority: 2,
+        priority: 3,
       ),
       pitem(
         [*Process automation:* Automated cellular cloning and fermentation processes, implemented real-time process control systems.],
-        priority: 2,
+        priority: 3,
       ),
       pitem(
         [*Embedded optimization:* Optimized real-time embedded systems for Arduino/ESP32 microcontrollers. (#lang("C"))],
-        priority: 2,
+        priority: 3,
       ),
     ),
   )
@@ -161,7 +162,7 @@
 ]
 
 
-#section("Education", priority: 2)[
+#section("Education", priority: 1)[
   #experience(
     organization: "KU Leuven",
     location: "Leuven, Belgium",
@@ -214,11 +215,11 @@
   )
 ]
 
-#section("Hobbies", priority: 4)[
+#section("Hobbies", priority: 1)[
   #skill(
     "Community founder",
     [Founder of "Systems Programming Ghent" (#link("https://sysghent.be", "sysghent.be")): organise networking events, in-depth talks and workshops in Ghent about systems programming languages such as Rust and C++.],
-    priority: 4,
+    priority: 1,
   )
 
   #skill(

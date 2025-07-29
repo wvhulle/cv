@@ -45,7 +45,7 @@
       #text(size: 10pt)[
         #link("mailto:" + email) \
         #link(website) \
-        #phone
+        #link("tel:" + phone)
       ]
     ],
   )
