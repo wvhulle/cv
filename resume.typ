@@ -3,9 +3,7 @@
 #setup-page()
 
 // Apply gray underlines to all links in the document
-#show link: it => {
-  underline(stroke: gray, it)
-}
+
 
 #resume-header(
   "Willem Vanhulle",

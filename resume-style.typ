@@ -1,4 +1,3 @@
-// Clean, standard Typst resume styling
 
 #let setup-page() = {
   set page(
@@ -19,15 +18,10 @@
   set heading(numbering: none)
 }
 
-// Global show rule for links with gray underlines
-
-
-// Simple section header
 #let section-header(title) = {
   heading(level: 2, smallcaps(title))
 }
 
-// Contact header
 #let resume-header(name, email, website, phone) = {
   grid(
     columns: (1fr, 1fr),
@@ -45,7 +39,6 @@
   )
 }
 
-// Job/education entry
 #let resume-entry(organization, location, title, dates, items: ()) = {
   block(breakable: false)[
     #grid(
@@ -63,7 +56,6 @@
   ]
 }
 
-// Project entry with bullet points
 #let project-entry(title, organization, dates, items: ()) = {
   block(breakable: false)[
     #grid(
@@ -80,7 +72,9 @@
   ]
 }
 
-// Skills entry
 #let skill-entry(category, skills) = {
+  show link: it => {
+    underline(stroke: gray, it)
+  }
   [*#category:* #skills]
 }
