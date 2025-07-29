@@ -5,7 +5,7 @@
   email: "willemvanhulle@protonmail.com",
   website: "willemvanhulle.tech",
   phone: "+32 479 080 252",
-  target-pages: target-pages,
+  target-pages: 2,
 )
 
 #section("Experience")[
@@ -52,7 +52,7 @@
     priority: 1,
     items: (
       pitem(
-        [*Full-stack development:* Built data collection platform with time-series visualization, implemented type-safe large-scale web applications. (#lang("TypeScript"), #lang("HTML"), #lang("SCSS"))],
+        [*Full-stack development:* Built data collection platform with time-series visualization, implemented type-safe large-scale web applications. (#lang("TypeScript"), #lang("JavaScript"), #lang("HTML"), #lang("SCSS"))],
         priority: 2,
       ),
       pitem(
@@ -64,7 +64,7 @@
         priority: 2,
       ),
       pitem(
-        [*Database systems:* Designed high-performance scientific databases (PostgreSQL, Neo4j), modeled complex scientific processes. (#lang("R"))],
+        [*Database systems:* Designed high-performance scientific databases (PostgreSQL, Neo4j), modeled complex scientific processes. (#lang("R"), #lang("SQL"))],
         priority: 2,
       ),
       pitem(
@@ -138,8 +138,20 @@
 
   #skill(
     "Smart plant pot workshop",
-    [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Event at #link("https://www.meetup.com/systems-programming-ghent/events/307269551", "MeetUp"). (#lang("Rust"))],
+    [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Code at #link("https://github.com/sysghent/plant-pot", "GitHub"). (#lang("Rust"))],
     priority: 2,
+  )
+
+  #skill(
+    "Lean computational riddles workshop",
+    [Created and delivered workshop on solving computational problems with theorem proving. Interactive problem-solving using dependent types and formal verification. Materials at #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (July 2025) (#lang("Lean"))],
+    priority: 1,
+  )
+
+  #skill(
+    "Probability arithmetic in Lean",
+    [Developed library for simplifying probability calculations in formal mathematics. Extended real number arithmetic for probabilistic proofs. Available at #link("https://github.com/wvhulle/ennreal-arith", "GitHub"). (#lang("Lean"))],
+    priority: 1,
   )
 ]
 
@@ -148,31 +160,6 @@
   #skill("French, German", "Intermediate", priority: 3)
 ]
 
-#section("Programming languages", priority: 1)[
-  #skill(
-    "Rust",
-    [Advanced (2 years). Systems programming: complex trait bounds, zero-cost async combinators, embedded HALs. Stack: Tokio/Embassy (async), Axum (web), Zenoh (pub-sub), Serde, Prost (protobuf), Statig (state machines).],
-    priority: 1,
-  )
-
-  #skill(
-    "Coq, Agda, Haskell",
-    [Intermediate (3 years). Formal verification for systems software, type theory research, proof-assistant development.],
-    priority: 1,
-  )
-
-  #skill(
-    "HTML, SASS, TypeScript, JavaScript, SQL",
-    [Advanced (3 years). Backend development: Express.js APIs, database design, type-safe web services.],
-    priority: 1,
-  )
-
-  #skill(
-    "Python",
-    [Advanced (6 years). High-performance computing, property-based testing (Hypothesis), algorithmic optimization, data pipeline design.],
-    priority: 1,
-  )
-]
 
 #section("Education", priority: 2)[
   #experience(
@@ -189,6 +176,17 @@
   )
 
   #experience(
+    organization: "University of Utrecht",
+    location: "Utrecht, Netherlands",
+    title: "Summer School: Formalizing Mathematics in Lean",
+    start-date: "July 2025",
+    priority: 1,
+    items: (
+      [*Formal mathematics:* Advanced study of theorem proving, dependent type theory, and mathematical formalization. (#lang("Lean"))],
+    ),
+  )
+
+  #experience(
     organization: "KU Leuven",
     location: "Leuven, Belgium",
     title: "Master of Science in Pure Mathematics (Eng.), thesis on functional programming languages",
@@ -197,6 +195,7 @@
     priority: 1,
     items: (
       [*Completed courses:* Algebra, analysis, discrete mathematics, differential geometry, unified geometry, topology.],
+      [*Thesis research:* Functional programming languages, type theory, and formal verification methods. (#lang("Haskell"), #lang("Coq"), #lang("Agda"))],
       [*Volunteering roles:* Coordinator of Groot-Begijnhof Leuven student association.],
     ),
   )

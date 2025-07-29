@@ -1,9 +1,5 @@
 // Resume Configuration
-// Adjust target-pages to control content density and page count
-
-#let target-pages = 2
-
-// Priority thresholds for sections and content
+// Priority thresholds and limits based on target page count
 #let priority-threshold(target-pages) = {
   if target-pages == 1 { 1 } else if target-pages == 2 { 2 } else { 5 }
 }
