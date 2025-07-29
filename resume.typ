@@ -84,7 +84,7 @@
     title: "Mathematics guest lecturer",
     start-date: "Sept. 2020",
     end-date: "Jan. 2021",
-    priority: 1,
+    priority: 2,
     items: (
       [*Teaching:* Mathematics and programming courses and document preparation. (#lang("Python"), #lang("LaTeX"))],
     ),
@@ -139,7 +139,7 @@
   #skill(
     "Smart plant pot workshop",
     [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Event at #link("https://www.meetup.com/systems-programming-ghent/events/307269551", "MeetUp"). (#lang("Rust"))],
-    priority: 1,
+    priority: 2,
   )
 ]
 

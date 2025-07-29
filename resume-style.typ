@@ -1,10 +1,24 @@
-#let target-pages = 1
+#let target-pages = 2
 
+// More restrictive thresholds for better page fitting
 #let priority-threshold(target-pages) = {
-  if target-pages == 1 { 1 } else if target-pages == 2 { 3 } else { 5 }
+  if target-pages == 1 { 1 } else if target-pages == 2 { 2 } else { 5 }
 }
 
 #let item-threshold(target-pages) = {
+  if target-pages == 1 { 1 } else if target-pages == 2 { 2 } else { 5 }
+}
+
+// Adaptive content limits based on estimated content density
+#let max-experience-entries(target-pages) = {
+  if target-pages == 1 { 2 } else if target-pages == 2 { 3 } else { 5 }
+}
+
+#let max-projects(target-pages) = {
+  if target-pages == 1 { 1 } else if target-pages == 2 { 3 } else { 5 }
+}
+
+#let max-hobby-projects(target-pages) = {
   if target-pages == 1 { 1 } else if target-pages == 2 { 2 } else { 5 }
 }
 
@@ -70,14 +84,14 @@
   let threshold = item-threshold(target-pages)
   items
     .filter(item => {
-      if type(item) == "dictionary" and "priority" in item {
+      if type(item) == dictionary and "priority" in item {
         item.priority <= threshold
       } else {
         target-pages >= 2 // Non-prioritized items only in 2+ page mode
       }
     })
     .map(item => {
-      if type(item) == "dictionary" and "content" in item {
+      if type(item) == dictionary and "content" in item {
         item.content
       } else {
         item
@@ -95,6 +109,7 @@
   items: (),
 ) = {
   if priority > priority-threshold(target-pages) { return }
+
 
   let date-range = if end-date != none {
     start-date + " - " + end-date
@@ -129,6 +144,7 @@
   items: (),
 ) = {
   if priority > priority-threshold(target-pages) { return }
+
 
   let date-range = if end-date != none {
     start-date + " - " + end-date
