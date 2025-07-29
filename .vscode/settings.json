@@ -6,9 +6,12 @@
   },
   "editor.formatOnSave": true,
   "[typst]": {
-    "editor.defaultFormatter": "myriad-dreamin.tinymist"
+    "editor.defaultFormatter": "myriad-dreamin.tinymist",
+    "editor.formatOnSave": true
   },
   "extensions.ignoreRecommendations": false,
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000
+  "files.autoSaveDelay": 1000,
+  "tinymist.formatterMode": "typstyle",
+  "tinymist.lint.enabled": true
 }

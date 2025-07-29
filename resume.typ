@@ -1,189 +1,236 @@
 #import "resume-style.typ": *
 
-#setup-page()
-
-// Apply gray underlines to all links in the document
-#show link: it => {
-  underline(stroke: gray, it)
-}
-
-
-#resume-header(
-  "Willem Vanhulle",
-  "willemvanhulle@protonmail.com",
-  "willemvanhulle.tech/",
-  "+32 479 080 252",
+#show: resume.with(
+  name: "Willem Vanhulle",
+  email: "willemvanhulle@protonmail.com",
+  website: "willemvanhulle.tech",
+  phone: "+32 479 080 252",
+  target-pages: target-pages,
 )
 
-#section-header("Experience")
+#section("Experience")[
+  #experience(
+    organization: "OTIV (Remote operation of semi-autonomous rail vehicles)",
+    location: "Ghent, Belgium",
+    title: "Mid-level software engineer",
+    start-date: "Apr. 2024",
+    priority: 1,
+    items: (
+      pitem(
+        [*Distributed systems:* Built distributed freight train control system with dynamic presence detection, custom async iterator toolkit, real-time connectivity monitoring with emergency breaking, and GStreamer/WebRTC video streaming.],
+        priority: 1,
+      ),
+      pitem(
+        [*Build systems & CI:* Integrated LSP with Bazel, led Bazel→Cargo migration, wrote CI/CD pipelines from scratch, optimized pipeline runtime by 95%. (#lang("Rust"))],
+        priority: 1,
+      ),
+      pitem(
+        [*Language expertise:* Organized advanced Rust training on undocumented language features, performed deep technical code reviews. (#lang("Rust"))],
+        priority: 1,
+      ),
+      pitem(
+        [*Testing:* Implemented comprehensive unit/integration test suites for safety-critical railway systems.],
+        priority: 2,
+      ),
+      pitem(
+        [*Real-time interfaces:* Built multi-monitor native GUIs with streaming data table widgets and geographical map rendering using Slint. (#lang("Rust"))],
+        priority: 2,
+      ),
+      pitem(
+        [*Embedded systems:* Developed software for real-time hardware control (touchscreens, physical levers, sensors).],
+        priority: 2,
+      ),
+    ),
+  )
 
-#resume-entry(
-  organization: "OTIV (Remote operation of semi-autonomous rail vehicles)",
-  location: "Ghent, Belgium",
-  title: "Mid-level software engineer",
-  start-date: "Apr. 2024",
-  items: (
-    [*Distributed systems:* Work on a distributed system to operate freight trains remotely. Create a dynamic presence detection system. Create an internal asynchronous iterator / stream toolkit. Create a crucial connectivity monitoring systems that can react to connection loss and engage emergency breaking. Manage real-time audio- and video-streams through GStreamer and WebRTC.],
-    [*Developer tools:* Smooth out integration between the language-server and the Bazel build system. Lead transition from Bazel to the Cargo build system for one team. Write CI/CD pipelines from scratch. Reduced run-time of existing CI pipelines up to 95%. (#lang("Rust"))],
-    [*Mentorship:* Organised trainings on parts of the programming language that are lacking in documentation. Performed thorough code reviews and coached junior colleagues. (#lang("Rust"))],
-    [*Tests:* Write extensive unit tests for new and existing software modules. Implement integration tests based on requirements given by railway companies.],
-    [*Native GUI:* Co-create several immersive, multi-monitor, native user-interfaces. Implement widgets representing streamed data tables. Create a geographical map widget with highlighted train routes and Slint. (#lang("Rust"))],
-    [*Embedded:* Write software modules interfacing with real physical controls of trains such as custom touch-screens, toggles and traction/breaking levers, running on Linux.],
-  ),
-)
+  #experience(
+    organization: "Inbiose (Microbial production of speciality carbohydrates)",
+    location: "Ghent, Belgium",
+    title: "Software engineer",
+    start-date: "June 2021",
+    end-date: "January 2024",
+    priority: 1,
+    items: (
+      pitem(
+        [*Full-stack development:* Built data collection platform with time-series visualization, implemented type-safe large-scale web applications. (#lang("TypeScript"), #lang("HTML"), #lang("SCSS"))],
+        priority: 2,
+      ),
+      pitem(
+        [*Robotics & embedded:* Built industrial fermentation robots, interfaced with legacy hardware (25+ years) and modern sensors, migrated to async programming. (#lang("Python"), #lang("Rust"))],
+        priority: 1,
+      ),
+      pitem(
+        [*High-performance computing:* Implemented property-based testing for genetic data batch processing, optimized bioinformatics pipelines. (#lang("Python"))],
+        priority: 2,
+      ),
+      pitem(
+        [*Database systems:* Designed high-performance scientific databases (PostgreSQL, Neo4j), modeled complex scientific processes. (#lang("R"))],
+        priority: 2,
+      ),
+      pitem(
+        [*Process automation:* Automated cellular cloning and fermentation processes, implemented real-time process control systems.],
+        priority: 2,
+      ),
+      pitem(
+        [*Embedded optimization:* Optimized real-time embedded systems for Arduino/ESP32 microcontrollers. (#lang("C"))],
+        priority: 2,
+      ),
+    ),
+  )
 
-#resume-entry(
-  organization: "Inbiose (Microbial production of speciality carbohydrates)",
-  location: "Ghent, Belgium",
-  title: "Software engineer",
-  start-date: "June 2021",
-  end-date: "January 2024",
-  items: (
-    [*Micro-biotechnology:* Learn science behind cellular cloning of e. coli. bacteria, used for producing sugars with special health benefits. Learn process of fermentation and down-stream processing with ion-exchange and membrane filtering. Get involved in lab activities with lab workers, operators and researchers.],
-    [*Web-development:* Create graphical web-based data collection procedure and application for the down-stream processing department. Create accompanying simple time-series and data-grid visualisation widgets with Svelte. Introduce modern typing as a tool for creating large web applications. (#lang("TypeScript"), #lang("HTML"), #lang("SCSS"))],
-    [*Bio-informatics:* Implement property-based unit tests to verify correctness of batch operations on internal, proprietary genetic data. Extend and maintain internal tools for bio-informatics. (#lang("Python"))],
-    [*Embedded systems:* Supported creation of industrial small-scale microbial fermentation robots. Interfaced with legacy hardware (more than 25 years old) and modern optical industrial sensors. Transitioned from synchronous to asynchronous programming. (#lang("Python"), #lang("Rust"))],
-    [*Data modelling:* Analyse and model internal scientific processes. Model and construct scientific databases in PostgreSQL. Use graph-oriented databases such as Neo4j. (#lang("R"))],
-    [*Mentorship:* Assist electronics engineers in optimising internal embedded programs for Arduino and ESP32 micro-controllers. (#lang("C"))],
-  ),
-)
+  #experience(
+    organization: "CVO (Adult and refugee high-school)",
+    location: "Leuven, Belgium",
+    title: "Mathematics guest lecturer",
+    start-date: "Sept. 2020",
+    end-date: "Jan. 2021",
+    priority: 1,
+    items: (
+      [*Teaching:* Mathematics and programming courses and document preparation. (#lang("Python"), #lang("LaTeX"))],
+    ),
+  )
+]
 
-#resume-entry(
-  organization: "CVO (Adult and refugee high-school)",
-  location: "Leuven, Belgium",
-  title: "Mathematics guest lecturer",
-  start-date: "Sept. 2020",
-  end-date: "Jan. 2021",
-  items: (
-    [*Teaching:* Mathematics and programming courses and document preparation. (#lang("Python"), #lang("LaTeX"))],
-  ),
-)
+#section("Major professional projects", priority: 1)[
+  #project(
+    title: "Emergency breaking mechanism",
+    organization: "OTIV",
+    start-date: "Sept. 2024",
+    end-date: "Mar. 2025",
+    priority: 1,
+    items: (
+      [*Real-time monitoring:* Built heartbeat system detecting connection failures between remote operators and autonomous trains.],
+      [*Stream processing:* Designed pub-sub/TCP stream aggregator with automatic failover and emergency breaking triggers.],
+    ),
+  )
 
-#section-header("Major professional projects")
+  #project(
+    title: "Fermentation robot",
+    organization: "Inbiose",
+    start-date: "Oct. 2023",
+    end-date: "April 2024",
+    priority: 3,
+    items: (
+      [*Systems API design:* Built type-safe serial communication API in Rust with comprehensive error handling for robotic systems.],
+      [*Real-time control systems:* Implemented PID-controlled process automation with anomaly detection for 48-hour continuous operation.],
+    ),
+  )
 
-#project-entry(
-  title: "Emergency breaking mechanism",
-  organization: "OTIV",
-  start-date: "Sept. 2024",
-  end-date: "Mar. 2025",
-  items: (
-    [*Heartbeat monitor:* Detects whether the connection between a remote human operator and a semi-autonomous freight train is still normal.],
-    [*Stream aggregator:* Initialise incoming (and outgoing) pub-sub, TCP data streams for assigned freight trains. Aggregate the streams, detect connection loss, initiate emergency breaking mechanism. Findings on #link("https://willemvanhulle.tech/blog", "personal blog").],
-  ),
-)
+  #project(
+    title: "Collaborative data-grid",
+    organization: "Inbiose",
+    start-date: "Apr. 2023",
+    end-date: "Feb. 2024",
+    priority: 3,
+    items: (
+      [*Distributed systems:* Built database-backed distributed data grid with persistence layer.],
+      [*Collaborative interfaces:* Designed real-time collaborative data entry system with operational transformation.],
+    ),
+  )
+]
 
-#project-entry(
-  title: "Fermentation robot",
-  organization: "Inbiose",
-  start-date: "Oct. 2023",
-  end-date: "April 2024",
-  items: (
-    [*Serial communication abstraction layer:* Create a high-level and safe serial API in Rust for operating essential components for a fermentation robot. Implemented thorough error detection and propagation.],
-    [*Fermentation process manager:* Add nutrients and chemicals throughout a 48h biological process for growing e. coli. bacteria. Detect anomalies and stabilise with PID-control.],
-  ),
-)
+#section("Hobby projects", priority: 1)[
+  #skill(
+    "Splitting data streams",
+    [Designed runtime-agnostic async stream combinator using low-level primitives (Waker, Poll, Pin). Published as open-source #link("https://crates.io/crates/forked_stream", "crate"). (#lang("Rust"))],
+    priority: 1,
+  )
 
-#project-entry(
-  title: "Collaborative data-grid",
-  organization: "Inbiose",
-  start-date: "Apr. 2023",
-  end-date: "Feb. 2024",
-  items: (
-    [*Distributed data-frames:* Distributed, database-backed, persisted data-grid.],
-    [*Spreadsheet interface:* Interactive co-operative table view for lab workers to enter chemical process data with columns grouping and multiple cell types, similar to a restricted version of Google Docs.],
-  ),
-)
+  #skill(
+    "Smart plant pot workshop",
+    [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Event at #link("https://www.meetup.com/systems-programming-ghent/events/307269551", "MeetUp"). (#lang("Rust"))],
+    priority: 1,
+  )
+]
 
-#section-header("Hobby projects")
+#section("Spoken languages", priority: 2)[
+  #skill("English, Dutch", "Native", priority: 2)
+  #skill("French, German", "Intermediate", priority: 3)
+]
 
-#skill-entry(
-  "Splitting data streams",
-  [Created a functional asynchronous combinator to split data streams / asynchronous iterators. Run-time agnostic and fully tested. Intended to be used with many, simultaneous splits. Built with low-level asynchronous primitives such as Waker, Poll and Pin. Available as a public #link("https://crates.io/crates/forked_stream", "crate"). (#lang("Rust"))],
-)
+#section("Programming languages", priority: 1)[
+  #skill(
+    "Rust",
+    [Advanced (2 years). Systems programming: complex trait bounds, zero-cost async combinators, embedded HALs. Stack: Tokio/Embassy (async), Axum (web), Zenoh (pub-sub), Serde, Prost (protobuf), Statig (state machines).],
+    priority: 1,
+  )
 
-#skill-entry(
-  "Smart plant pot workshop",
-  [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Event at #link("https://www.meetup.com/systems-programming-ghent/events/307269551", "MeetUp"). (#lang("Rust"))],
-)
+  #skill(
+    "Coq, Agda, Haskell",
+    [Intermediate (3 years). Formal verification for systems software, type theory research, proof-assistant development.],
+    priority: 1,
+  )
 
-#section-header("Spoken languages")
+  #skill(
+    "HTML, SASS, TypeScript, JavaScript, SQL",
+    [Advanced (3 years). Backend development: Express.js APIs, database design, type-safe web services.],
+    priority: 1,
+  )
 
-#skill-entry("English, Dutch", "Native")
-#skill-entry("French, German", "Intermediate")
+  #skill(
+    "Python",
+    [Advanced (6 years). High-performance computing, property-based testing (Hypothesis), algorithmic optimization, data pipeline design.],
+    priority: 1,
+  )
+]
 
-#section-header("Programming languages")
+#section("Education", priority: 2)[
+  #experience(
+    organization: "KU Leuven",
+    location: "Leuven, Belgium",
+    title: "Preparation program and Master of Science in Theoretical Physics (terminated early)",
+    start-date: "Sep. 2019",
+    end-date: "April 2021",
+    priority: 3,
+    items: (
+      [*Completed courses:* Statistical mechanics, data mining and neural networks, thermodynamics, analytical mechanics, electrodynamics.],
+      [*Volunteering roles:* Guide for international students.],
+    ),
+  )
 
-#skill-entry(
-  "Rust",
-  [Advanced (2 years). Specialized in complex trait bounds and creating performant asynchronous combinators from scratch. Frameworks used: Axum (web server), Embassy and Tokio (asynchronous runtimes), Zenoh (publish-subscribe), Serde (serialization), Statig (state machines), Prost (protobuf). Limited experience with embedded HALs.],
-)
+  #experience(
+    organization: "KU Leuven",
+    location: "Leuven, Belgium",
+    title: "Master of Science in Pure Mathematics (Eng.), thesis on functional programming languages",
+    start-date: "Sep. 2017",
+    end-date: "June 2019",
+    priority: 1,
+    items: (
+      [*Completed courses:* Algebra, analysis, discrete mathematics, differential geometry, unified geometry, topology.],
+      [*Volunteering roles:* Coordinator of Groot-Begijnhof Leuven student association.],
+    ),
+  )
 
-#skill-entry(
-  "Coq, Agda, Haskell",
-  [Intermediate (3 years). Used several proof-assistants for formal mathematics (topology) / systems software verification. Following up recent developments in free-time.],
-)
+  #experience(
+    organization: "VUB",
+    location: "Brussels, Belgium",
+    title: "Bachelor of Science in Mathematics, Minor Computer Science, thesis on unsupervised learning",
+    start-date: "Sep. 2013",
+    end-date: "Aug. 2017",
+    priority: 4,
+    items: (
+      [*Completed courses:* Functional programming, algorithms and data-structures, logic, analysis, algebra, philosophy, geometry.],
+      [*Student job:* Mathematics tutor.],
+    ),
+  )
+]
 
-#skill-entry(
-  "HTML, SASS, TypeScript, JavaScript, SQL",
-  [Advanced (3 years). Express.js back-end, Svelte(Kit) front-end.],
-)
+#section("Hobbies", priority: 4)[
+  #skill(
+    "Community founder",
+    [Founder of "Systems Programming Ghent" (#link("https://sysghent.be", "sysghent.be")): organise networking events, in-depth talks and workshops in Ghent about systems programming languages such as Rust and C++.],
+    priority: 4,
+  )
 
-#skill-entry(
-  "Python",
-  [Advanced (6 years). Bio-informatics with BioPython. End-to-end UI testing. Used property-based testing with Hypothesis (fuzzer).],
-)
+  #skill(
+    "Play with electronical components",
+    [Order development boards and assemble simple electronical circuits with simple sensors. Some experience with ARM and RISC-V boards such as ESP32c6, Arduino Uno (AVR), Raspberry Pico (RP2040).],
+    priority: 5,
+  )
 
-#section-header("Education")
-
-#resume-entry(
-  organization: "KU Leuven",
-  location: "Leuven, Belgium",
-  title: "Preparation program and Master of Science in Theoretical Physics (terminated early)",
-  start-date: "Sep. 2019",
-  end-date: "April 2021",
-  items: (
-    [*Completed courses:* Statistical mechanics, data mining and neural networks, thermodynamics, analytical mechanics, electrodynamics.],
-    [*Volunteering roles:* Guide for international students.],
-  ),
-)
-
-#resume-entry(
-  organization: "KU Leuven",
-  location: "Leuven, Belgium",
-  title: "Master of Science in Pure Mathematics (Eng.), thesis on functional programming languages",
-  start-date: "Sep. 2017",
-  end-date: "June 2019",
-  items: (
-    [*Completed courses:* Algebra, analysis, discrete mathematics, differential geometry, unified geometry, topology.],
-    [*Volunteering roles:* Coordinator of Groot-Begijnhof Leuven student association.],
-  ),
-)
-
-#resume-entry(
-  organization: "VUB",
-  location: "Brussels, Belgium",
-  title: "Bachelor of Science in Mathematics, Minor Computer Science, thesis on unsupervised learning",
-  start-date: "Sep. 2013",
-  end-date: "Aug. 2017",
-  items: (
-    [*Completed courses:* Functional programming, algorithms and data-structures, logic, analysis, algebra, philosophy, geometry.],
-    [*Student job:* Mathematics tutor.],
-  ),
-)
-
-#section-header("Hobbies")
-
-#skill-entry(
-  "Community founder",
-  [Founder of "Systems Programming Ghent" (#link("https://sysghent.be", "sysghent.be")): organise networking events, in-depth talks and workshops in Ghent about systems programming languages such as Rust and C++.],
-)
-
-#skill-entry(
-  "Play with electronical components",
-  [Order development boards and assemble simple electronical circuits with simple sensors. Some experience with ARM and RISC-V boards such as ESP32c6, Arduino Uno (AVR), Raspberry Pico (RP2040).],
-)
-
-#skill-entry(
-  "Visit developer conferences",
-  [I go to the developer conferences in Europe to meet colleagues and share my passion.],
-)
+  #skill(
+    "Visit developer conferences",
+    [I go to the developer conferences in Europe to meet colleagues and share my passion.],
+    priority: 5,
+  )
+]
