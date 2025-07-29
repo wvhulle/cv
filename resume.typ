@@ -24,10 +24,10 @@
   "Apr. 2024 - current",
   items: (
     [*Distributed systems:* Work on a distributed system to operate freight trains remotely. Create a dynamic presence detection system. Create an internal asynchronous iterator / stream toolkit. Create a crucial connectivity monitoring systems that can react to connection loss and engage emergency breaking. Manage real-time audio- and video-streams through GStreamer and WebRTC.],
-    [*Developer tools:* Smooth out integration between the language-server and the Bazel build system. Lead transition from Bazel to the Cargo build system for one team. Write CI/CD pipelines from scratch. Reduced run-time of existing CI pipelines up to 95%. (#lang("Rust", "https://www.rust-lang.org/"))],
-    [*Mentorship:* Organised trainings on parts of the programming language that are lacking in documentation. Performed thorough code reviews and coached junior colleagues. (#lang("Rust", "https://www.rust-lang.org/"))],
+    [*Developer tools:* Smooth out integration between the language-server and the Bazel build system. Lead transition from Bazel to the Cargo build system for one team. Write CI/CD pipelines from scratch. Reduced run-time of existing CI pipelines up to 95%. (#lang("Rust"))],
+    [*Mentorship:* Organised trainings on parts of the programming language that are lacking in documentation. Performed thorough code reviews and coached junior colleagues. (#lang("Rust"))],
     [*Tests:* Write extensive unit tests for new and existing software modules. Implement integration tests based on requirements given by railway companies.],
-    [*Native GUI:* Co-create several immersive, multi-monitor, native user-interfaces. Implement widgets representing streamed data tables. Create a geographical map widget with highlighted train routes and Slint. (#lang("Rust", "https://www.rust-lang.org/"))],
+    [*Native GUI:* Co-create several immersive, multi-monitor, native user-interfaces. Implement widgets representing streamed data tables. Create a geographical map widget with highlighted train routes and Slint. (#lang("Rust"))],
     [*Embedded:* Write software modules interfacing with real physical controls of trains such as custom touch-screens, toggles and traction/breaking levers, running on Linux.],
   ),
 )
@@ -39,11 +39,11 @@
   "June 2021 - January 2024",
   items: (
     [*Micro-biotechnology:* Learn science behind cellular cloning of e. coli. bacteria, used for producing sugars with special health benefits. Learn process of fermentation and down-stream processing with ion-exchange and membrane filtering. Get involved in lab activities with lab workers, operators and researchers.],
-    [*Web-development:* Create graphical web-based data collection procedure and application for the down-stream processing department. Create accompanying simple time-series and data-grid visualisation widgets with Svelte. Introduce modern typing as a tool for creating large web applications. (#lang("TypeScript", "https://www.typescriptlang.org/"), #lang("HTML", "https://html.spec.whatwg.org/"), #lang("SCSS", "https://sass-lang.com/"))],
-    [*Bio-informatics:* Implement property-based unit tests to verify correctness of batch operations on internal, proprietary genetic data. Extend and maintain internal tools for bio-informatics. (#lang("Python", "https://www.python.org/"))],
-    [*Embedded systems:* Supported creation of industrial small-scale microbial fermentation robots. Interfaced with legacy hardware (more than 25 years old) and modern optical industrial sensors. Transitioned from synchronous to asynchronous programming. (#lang("Python", "https://www.python.org/"), #lang("Rust", "https://www.rust-lang.org/"))],
-    [*Data modelling:* Analyse and model internal scientific processes. Model and construct scientific databases in PostgreSQL. Use graph-oriented databases such as Neo4j. (#lang("R", "https://www.r-project.org/"))],
-    [*Mentorship:* Assist electronics engineers in optimising internal embedded programs for Arduino and ESP32 micro-controllers. (#lang("C", "https://en.wikipedia.org/wiki/C_(programming_language)"))],
+    [*Web-development:* Create graphical web-based data collection procedure and application for the down-stream processing department. Create accompanying simple time-series and data-grid visualisation widgets with Svelte. Introduce modern typing as a tool for creating large web applications. (#lang("TypeScript"), #lang("HTML"), #lang("SCSS"))],
+    [*Bio-informatics:* Implement property-based unit tests to verify correctness of batch operations on internal, proprietary genetic data. Extend and maintain internal tools for bio-informatics. (#lang("Python"))],
+    [*Embedded systems:* Supported creation of industrial small-scale microbial fermentation robots. Interfaced with legacy hardware (more than 25 years old) and modern optical industrial sensors. Transitioned from synchronous to asynchronous programming. (#lang("Python"), #lang("Rust"))],
+    [*Data modelling:* Analyse and model internal scientific processes. Model and construct scientific databases in PostgreSQL. Use graph-oriented databases such as Neo4j. (#lang("R"))],
+    [*Mentorship:* Assist electronics engineers in optimising internal embedded programs for Arduino and ESP32 micro-controllers. (#lang("C"))],
   ),
 )
 
@@ -53,7 +53,7 @@
   "Mathematics guest lecturer",
   "Sept. 2020 - Jan. 2021",
   items: (
-    [*Teaching:* Mathematics and programming courses and document preparation. (#lang("Python", "https://www.python.org/"), #lang("LaTeX", "https://www.latex-project.org/"))],
+    [*Teaching:* Mathematics and programming courses and document preparation. (#lang("Python"), #lang("LaTeX"))],
   ),
 )
 
@@ -93,12 +93,12 @@
 
 #skill-entry(
   "Splitting data streams",
-  [Created a functional asynchronous combinator to split data streams / asynchronous iterators. Run-time agnostic and fully tested. Intended to be used with many, simultaneous splits. Built with low-level asynchronous primitives such as Waker, Poll and Pin. Available as a public #link("https://crates.io/crates/forked_stream", "crate"). (#lang("Rust", "https://www.rust-lang.org/"))],
+  [Created a functional asynchronous combinator to split data streams / asynchronous iterators. Run-time agnostic and fully tested. Intended to be used with many, simultaneous splits. Built with low-level asynchronous primitives such as Waker, Poll and Pin. Available as a public #link("https://crates.io/crates/forked_stream", "crate"). (#lang("Rust"))],
 )
 
 #skill-entry(
   "Smart plant pot workshop",
-  [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Event at #link("https://www.meetup.com/systems-programming-ghent/events/307269551", "MeetUp"). (#lang("Rust", "https://www.rust-lang.org/"))],
+  [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Event at #link("https://www.meetup.com/systems-programming-ghent/events/307269551", "MeetUp"). (#lang("Rust"))],
 )
 
 #section-header("Spoken languages")
@@ -106,27 +106,7 @@
 #skill-entry("English, Dutch", "Native")
 #skill-entry("French, German", "Intermediate")
 
-#section-header("Programming languages")
 
-#skill-entry(
-  "Rust",
-  [Advanced (2 years). Specialized in complex trait bounds and creating performant asynchronous combinators from scratch. Frameworks used: Axum (web server), Embassy and Tokio (asynchronous runtimes), Zenoh (publish-subscribe), Serde (serialization), Statig (state machines), Prost (protobuf). Limited experience with embedded HALs.],
-)
-
-#skill-entry(
-  "Coq, Agda, Haskell",
-  [Intermediate (3 years). Used several proof-assistants for formal mathematics (topology) / systems software verification. Following up recent developments in free-time.],
-)
-
-#skill-entry(
-  "HTML, SASS, TypeScript, JavaScript, SQL",
-  [Advanced (3 years). Express.js back-end, Svelte(Kit) front-end.],
-)
-
-#skill-entry(
-  "Python",
-  [Advanced (6 years). Bio-informatics with BioPython. End-to-end UI testing. Used property-based testing with Hypothesis (fuzzer).],
-)
 
 #section-header("Education")
 

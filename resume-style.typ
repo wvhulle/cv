@@ -56,7 +56,6 @@
   ]
 }
 
-// Content functions with shared link styling
 #let with-underlined-links(content) = {
   show link: it => {
     underline(stroke: gray, it)
@@ -78,7 +77,7 @@
         v(-0.3em)
         list(..items.map(item => item))
       }
-    ]
+    ],
   )
 }
 
@@ -86,8 +85,7 @@
   with-underlined-links([*#category:* #skills])
 }
 
-// Format programming languages with monospace font and links (without underlines)
-#let lang(name, url) = {
-  show link: it => it  // Remove underlines for this link only
-  link(url, raw(name))
+// Format programming languages with monospace font (no links)
+#let lang(name) = {
+  raw(name)
 }
