@@ -39,14 +39,20 @@
   )
 }
 
-#let resume-entry(organization, location, title, dates, items: ()) = {
+#let resume-entry(organization: "", location: "", title: "", start-date: "", end-date: none, items: ()) = {
+  let date-range = if end-date != none {
+    start-date + " - " + end-date
+  } else {
+    start-date + " - current"
+  }
+  
   block(breakable: false)[
     #grid(
       columns: (1fr, auto),
       align: (left, right),
       row-gutter: 0.4em,
       [*#organization*], [#location],
-      [#text(size: 10pt, style: "italic", title)], [#text(size: 10pt, style: "italic", dates)],
+      [#text(size: 10pt, style: "italic", title)], [#text(size: 10pt, style: "italic", date-range)],
     )
 
     #if items.len() > 0 {
@@ -63,14 +69,20 @@
   content
 }
 
-#let project-entry(title, organization, dates, items: ()) = {
+#let project-entry(title: "", organization: "", start-date: "", end-date: none, items: ()) = {
+  let date-range = if end-date != none {
+    start-date + " - " + end-date
+  } else {
+    start-date + " - current"
+  }
+  
   with-underlined-links(
     block(breakable: false)[
       #grid(
         columns: (1fr, auto),
         align: (left, right),
         row-gutter: 0.4em,
-        [*#title* - #organization], [#emph(dates)],
+        [*#title* - #organization], [#emph(date-range)],
       )
 
       #if items.len() > 0 {

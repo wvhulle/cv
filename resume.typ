@@ -18,10 +18,10 @@
 #section-header("Experience")
 
 #resume-entry(
-  "OTIV (Remote operation of semi-autonomous rail vehicles)",
-  "Ghent, Belgium",
-  "Mid-level software engineer",
-  "Apr. 2024 - current",
+  organization: "OTIV (Remote operation of semi-autonomous rail vehicles)",
+  location: "Ghent, Belgium",
+  title: "Mid-level software engineer",
+  start-date: "Apr. 2024",
   items: (
     [*Distributed systems:* Work on a distributed system to operate freight trains remotely. Create a dynamic presence detection system. Create an internal asynchronous iterator / stream toolkit. Create a crucial connectivity monitoring systems that can react to connection loss and engage emergency breaking. Manage real-time audio- and video-streams through GStreamer and WebRTC.],
     [*Developer tools:* Smooth out integration between the language-server and the Bazel build system. Lead transition from Bazel to the Cargo build system for one team. Write CI/CD pipelines from scratch. Reduced run-time of existing CI pipelines up to 95%. (#lang("Rust"))],
@@ -33,10 +33,11 @@
 )
 
 #resume-entry(
-  "Inbiose (Microbial production of speciality carbohydrates)",
-  "Ghent, Belgium",
-  "Software engineer",
-  "June 2021 - January 2024",
+  organization: "Inbiose (Microbial production of speciality carbohydrates)",
+  location: "Ghent, Belgium",
+  title: "Software engineer",
+  start-date: "June 2021",
+  end-date: "January 2024",
   items: (
     [*Micro-biotechnology:* Learn science behind cellular cloning of e. coli. bacteria, used for producing sugars with special health benefits. Learn process of fermentation and down-stream processing with ion-exchange and membrane filtering. Get involved in lab activities with lab workers, operators and researchers.],
     [*Web-development:* Create graphical web-based data collection procedure and application for the down-stream processing department. Create accompanying simple time-series and data-grid visualisation widgets with Svelte. Introduce modern typing as a tool for creating large web applications. (#lang("TypeScript"), #lang("HTML"), #lang("SCSS"))],
@@ -48,10 +49,11 @@
 )
 
 #resume-entry(
-  "CVO (Adult and refugee high-school)",
-  "Leuven, Belgium",
-  "Mathematics guest lecturer",
-  "Sept. 2020 - Jan. 2021",
+  organization: "CVO (Adult and refugee high-school)",
+  location: "Leuven, Belgium",
+  title: "Mathematics guest lecturer",
+  start-date: "Sept. 2020",
+  end-date: "Jan. 2021",
   items: (
     [*Teaching:* Mathematics and programming courses and document preparation. (#lang("Python"), #lang("LaTeX"))],
   ),
@@ -60,9 +62,10 @@
 #section-header("Major professional projects")
 
 #project-entry(
-  "Emergency breaking mechanism",
-  "OTIV",
-  "Sept. 2024 - Mar. 2025",
+  title: "Emergency breaking mechanism",
+  organization: "OTIV",
+  start-date: "Sept. 2024",
+  end-date: "Mar. 2025",
   items: (
     [*Heartbeat monitor:* Detects whether the connection between a remote human operator and a semi-autonomous freight train is still normal.],
     [*Stream aggregator:* Initialise incoming (and outgoing) pub-sub, TCP data streams for assigned freight trains. Aggregate the streams, detect connection loss, initiate emergency breaking mechanism. Findings on #link("https://willemvanhulle.tech/blog", "personal blog").],
@@ -70,9 +73,10 @@
 )
 
 #project-entry(
-  "Fermentation robot",
-  "Inbiose",
-  "Oct. 2023 - April 2024",
+  title: "Fermentation robot",
+  organization: "Inbiose",
+  start-date: "Oct. 2023",
+  end-date: "April 2024",
   items: (
     [*Serial communication abstraction layer:* Create a high-level and safe serial API in Rust for operating essential components for a fermentation robot. Implemented thorough error detection and propagation.],
     [*Fermentation process manager:* Add nutrients and chemicals throughout a 48h biological process for growing e. coli. bacteria. Detect anomalies and stabilise with PID-control.],
@@ -80,9 +84,10 @@
 )
 
 #project-entry(
-  "Collaborative data-grid",
-  "Inbiose",
-  "Apr. 2023 - Feb. 2024",
+  title: "Collaborative data-grid",
+  organization: "Inbiose",
+  start-date: "Apr. 2023",
+  end-date: "Feb. 2024",
   items: (
     [*Distributed data-frames:* Distributed, database-backed, persisted data-grid.],
     [*Spreadsheet interface:* Interactive co-operative table view for lab workers to enter chemical process data with columns grouping and multiple cell types, similar to a restricted version of Google Docs.],
@@ -106,15 +111,36 @@
 #skill-entry("English, Dutch", "Native")
 #skill-entry("French, German", "Intermediate")
 
+#section-header("Programming languages")
 
+#skill-entry(
+  "Rust",
+  [Advanced (2 years). Specialized in complex trait bounds and creating performant asynchronous combinators from scratch. Frameworks used: Axum (web server), Embassy and Tokio (asynchronous runtimes), Zenoh (publish-subscribe), Serde (serialization), Statig (state machines), Prost (protobuf). Limited experience with embedded HALs.],
+)
+
+#skill-entry(
+  "Coq, Agda, Haskell",
+  [Intermediate (3 years). Used several proof-assistants for formal mathematics (topology) / systems software verification. Following up recent developments in free-time.],
+)
+
+#skill-entry(
+  "HTML, SASS, TypeScript, JavaScript, SQL",
+  [Advanced (3 years). Express.js back-end, Svelte(Kit) front-end.],
+)
+
+#skill-entry(
+  "Python",
+  [Advanced (6 years). Bio-informatics with BioPython. End-to-end UI testing. Used property-based testing with Hypothesis (fuzzer).],
+)
 
 #section-header("Education")
 
 #resume-entry(
-  "KU Leuven",
-  "Leuven, Belgium",
-  "Preparation program and Master of Science in Theoretical Physics (terminated early)",
-  "Sep. 2019 – April 2021",
+  organization: "KU Leuven",
+  location: "Leuven, Belgium",
+  title: "Preparation program and Master of Science in Theoretical Physics (terminated early)",
+  start-date: "Sep. 2019",
+  end-date: "April 2021",
   items: (
     [*Completed courses:* Statistical mechanics, data mining and neural networks, thermodynamics, analytical mechanics, electrodynamics.],
     [*Volunteering roles:* Guide for international students.],
@@ -122,10 +148,11 @@
 )
 
 #resume-entry(
-  "KU Leuven",
-  "Leuven, Belgium",
-  "Master of Science in Pure Mathematics (Eng.), thesis on functional programming languages",
-  "Sep. 2017 – June 2019",
+  organization: "KU Leuven",
+  location: "Leuven, Belgium",
+  title: "Master of Science in Pure Mathematics (Eng.), thesis on functional programming languages",
+  start-date: "Sep. 2017",
+  end-date: "June 2019",
   items: (
     [*Completed courses:* Algebra, analysis, discrete mathematics, differential geometry, unified geometry, topology.],
     [*Volunteering roles:* Coordinator of Groot-Begijnhof Leuven student association.],
@@ -133,10 +160,11 @@
 )
 
 #resume-entry(
-  "VUB",
-  "Brussels, Belgium",
-  "Bachelor of Science in Mathematics, Minor Computer Science, thesis on unsupervised learning",
-  "Sep. 2013 – Aug. 2017",
+  organization: "VUB",
+  location: "Brussels, Belgium",
+  title: "Bachelor of Science in Mathematics, Minor Computer Science, thesis on unsupervised learning",
+  start-date: "Sep. 2013",
+  end-date: "Aug. 2017",
   items: (
     [*Completed courses:* Functional programming, algorithms and data-structures, logic, analysis, algebra, philosophy, geometry.],
     [*Student job:* Mathematics tutor.],
