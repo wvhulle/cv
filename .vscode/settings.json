@@ -1,0 +1,14 @@
+{
+  "tinymist.outputPath": "$root/resume.pdf",
+  "tinymist.preview.refresh": "onSave",
+  "files.associations": {
+    "*.typ": "typst"
+  },
+  "editor.formatOnSave": true,
+  "[typst]": {
+    "editor.defaultFormatter": "myriad-dreamin.tinymist"
+  },
+  "extensions.ignoreRecommendations": false,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000
+}
