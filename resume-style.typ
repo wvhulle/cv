@@ -56,25 +56,38 @@
   ]
 }
 
-#let project-entry(title, organization, dates, items: ()) = {
-  block(breakable: false)[
-    #grid(
-      columns: (1fr, auto),
-      align: (left, right),
-      row-gutter: 0.4em,
-      [*#title* - #organization], [#emph(dates)],
-    )
-
-    #if items.len() > 0 {
-      v(-0.3em)
-      list(..items.map(item => item))
-    }
-  ]
-}
-
-#let skill-entry(category, skills) = {
+// Content functions with shared link styling
+#let with-underlined-links(content) = {
   show link: it => {
     underline(stroke: gray, it)
   }
-  [*#category:* #skills]
+  content
+}
+
+#let project-entry(title, organization, dates, items: ()) = {
+  with-underlined-links(
+    block(breakable: false)[
+      #grid(
+        columns: (1fr, auto),
+        align: (left, right),
+        row-gutter: 0.4em,
+        [*#title* - #organization], [#emph(dates)],
+      )
+
+      #if items.len() > 0 {
+        v(-0.3em)
+        list(..items.map(item => item))
+      }
+    ]
+  )
+}
+
+#let skill-entry(category, skills) = {
+  with-underlined-links([*#category:* #skills])
+}
+
+// Format programming languages with monospace font and links (without underlines)
+#let lang(name, url) = {
+  show link: it => it  // Remove underlines for this link only
+  link(url, raw(name))
 }
