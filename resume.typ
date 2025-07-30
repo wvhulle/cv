@@ -5,6 +5,7 @@
   email: "willemvanhulle@protonmail.com",
   website: "www.willemvanhulle.tech",
   phone: "+32 479 080 252",
+  profile-image: "profile.jpg",
   target-pages: 2,
 )
 
@@ -169,6 +170,8 @@
     [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Code at #link("https://github.com/sysghent/plant-pot", "GitHub"). (#lang("Rust"))],
     priority: 2,
   )
+
+
 
   #skill(
     "Lean computational riddles workshop",
