@@ -1,51 +1,83 @@
-// Modern Typst Resume Template
-// Idiomatic structure following Typst best practices
-
-// Utility functions
 #let lang(name) = raw(name)
+
+#let priority-threshold(pages) = if pages == 1 { 1 } else { 2 }
+
+#let should-show(priority, pages) = priority <= priority-threshold(pages)
+
+#let format-date-range(start, end) = {
+  if end != none { start + " - " + end } else { start + " - current" }
+}
+
+#let filter-prioritized-items(items, threshold) = {
+  items
+    .filter(item => {
+      if type(item) == dictionary and "priority" in item {
+        item.priority <= threshold
+      } else { true }
+    })
+    .map(item => {
+      if type(item) == dictionary and "content" in item {
+        item.content
+      } else { item }
+    })
+}
+
+#let entry-grid(left-top, right-top, left-bottom, right-bottom) = {
+  grid(
+    columns: (1fr, auto),
+    align: (left, right),
+    row-gutter: 0.4em,
+    left-top, right-top,
+    left-bottom, right-bottom,
+  )
+}
+
+#let render-entry-block(header, items) = {
+  block(breakable: false)[
+    #header
+    #if items.len() > 0 {
+      v(-0.3em)
+      list(..items)
+    }
+  ]
+}
 
 #let circular-profile(path, radius: 1.5em, offset: 1em) = {
   let size = radius * 2
-  box(move(
-    dy: offset,
-    block(
-      height: size,
-      width: size,
-      clip: true,
-      radius: radius,
-      image(path, fit: "cover")
-    )
-  ))
+  box(
+    move(
+      dy: offset,
+      block(
+        height: size,
+        width: size,
+        clip: true,
+        radius: radius,
+        image(path, fit: "cover"),
+      ),
+    ),
+  )
 }
 
-// Main template function - idiomatic Typst pattern
 #let resume(
-  // Personal information
   name: "",
-  email: "", 
+  email: "",
   website: "",
   phone: "",
   profile-image: none,
-  
-  // Layout options
   target-pages: 2,
   font: "Fira Sans",
-  
-  // Content
-  body
+  body,
 ) = {
-  // Page setup based on target pages
-  let margins = if target-pages == 1 { 0.75in } else { 1in }
-  
+  let margins = if target-pages == 1 { 0.75in } else { 0.85in }
+
   set page(paper: "a4", margin: margins)
   set text(font: font, size: 11pt)
-  set par(justify: true, leading: 0.9em)  
+  set par(justify: true, leading: 0.9em)
   set heading(numbering: none)
-  
+
   show raw: set text(font: "Fira Code", size: 1.1em)
   show link: underline.with(stroke: gray)
-  
-  // Header with profile image
+
   grid(
     columns: (2fr, 1fr),
     align: (left, right),
@@ -57,46 +89,41 @@
     ],
     text(size: 10pt)[
       #link("mailto:" + email) \
-      #link(website) \ 
+      #link(website) \
       #link("tel:" + phone)
-    ]
+    ],
   )
-  
-  // Use state for target-pages  
+
   let pages-state = state("target-pages", target-pages)
   pages-state.update(target-pages)
   body
 }
 
-// Section with priority filtering
 #let section(title, priority: 1, body) = context {
   let pages = state("target-pages").get()
-  let threshold = if pages == 1 { 1 } else { 3 }
-  
-  if priority <= threshold [
+
+  if should-show(priority, pages) [
     #heading(level: 2, smallcaps(title))
     #body
   ]
 }
 
-// Prioritized item with language support
 #let pitem(
   title: "",
-  description: "", 
+  description: "",
   priority: 2,
-  languages: ()
+  languages: (),
 ) = {
   let lang-text = if languages.len() > 0 {
     " (" + languages.map(lang).join(", ") + ")"
   } else { "" }
-  
+
   (
     content: [*#title:* #description#lang-text],
-    priority: priority
+    priority: priority,
   )
 }
 
-// Experience entry
 #let experience(
   organization: "",
   industry: "",
@@ -105,52 +132,28 @@
   start-date: "",
   end-date: none,
   priority: 1,
-  items: ()
+  items: (),
 ) = context {
   let pages = state("target-pages").get()
-  let item-threshold = if pages == 1 { 1 } else { 3 }
-  
-  if priority > (if pages == 1 { 1 } else { 3 }) { return }
-  
-  let date-range = if end-date != none {
-    start-date + " - " + end-date
-  } else {
-    start-date + " - current"
-  }
-  
-  let filtered-items = items
-    .filter(item => {
-      if type(item) == dictionary and "priority" in item {
-        item.priority <= item-threshold
-      } else { true }
-    })
-    .map(item => {
-      if type(item) == dictionary and "content" in item {
-        item.content  
-      } else { item }
-    })
-  
-  block(breakable: false)[
-    #grid(
-      columns: (1fr, auto),
-      align: (left, right),
-      row-gutter: 0.4em,
-      [*#organization* (#industry)], [#location],
-      text(size: 10pt, style: "italic")[#title], 
-      text(size: 10pt, style: "italic")[#date-range]
-    )
-    
-    #if filtered-items.len() > 0 {
-      v(-0.3em)
-      list(..filtered-items)
-    }
-  ]
+
+  if not should-show(priority, pages) { return }
+
+  let date-range = format-date-range(start-date, end-date)
+  let filtered-items = filter-prioritized-items(items, priority-threshold(pages))
+
+  let header = entry-grid(
+    [*#organization* (#industry)],
+    [#location],
+    text(size: 10pt, style: "italic")[#title],
+    text(size: 10pt, style: "italic")[#date-range],
+  )
+
+  render-entry-block(header, filtered-items)
 }
 
-// Education entry with courses array support
 #let education(
   organization: "",
-  industry: "", 
+  industry: "",
   location: "",
   degree: "",
   thesis: none,
@@ -158,18 +161,13 @@
   end-date: none,
   priority: 1,
   courses: (),
-  volunteering: none
+  volunteering: none,
 ) = context {
   let pages = state("target-pages").get()
-  if priority > (if pages == 1 { 1 } else { 3 }) { return }
-  
-  let date-range = if end-date != none {
-    start-date + " - " + end-date  
-  } else {
-    start-date + " - current"
-  }
-  
-  // Format courses with proper grammar
+  if not should-show(priority, pages) { return }
+
+  let date-range = format-date-range(start-date, end-date)
+
   let format-courses(courses) = {
     if courses.len() == 0 { return none }
     if courses.len() == 1 {
@@ -181,7 +179,7 @@
       all-but-last.join(", ") + " and " + last
     }
   }
-  
+
   let items = ()
   let formatted-courses = format-courses(courses)
   if formatted-courses != none {
@@ -190,67 +188,50 @@
   if volunteering != none {
     items.push([*Volunteering:* #volunteering])
   }
-  
-  block(breakable: false)[
-    #grid(
-      columns: (1fr, auto),
-      align: (left, right), 
-      row-gutter: 0.4em,
-      [*#organization* (#industry)], [#location],
-      [
-        #text(size: 10pt, style: "italic")[#degree]
-        #if thesis != none [
-          #v(-0.5em)
-          #text(size: 9pt, fill: rgb(80, 80, 80))[Thesis: #thesis]
-        ]
-      ],
-      text(size: 10pt, style: "italic")[#date-range]
-    )
-    
-    #if items.len() > 0 {
-      v(-0.3em)
-      list(..items)
-    }
+
+  let degree-content = [
+    #text(size: 10pt, style: "italic")[#degree]
+    #if thesis != none [
+      #v(-0.5em)
+      #text(size: 9pt, fill: rgb(80, 80, 80))[Thesis: #thesis]
+    ]
   ]
+
+  let header = entry-grid(
+    [*#organization* (#industry)],
+    [#location],
+    degree-content,
+    text(size: 10pt, style: "italic")[#date-range],
+  )
+
+  render-entry-block(header, items)
 }
 
-// Project entry  
 #let project(
   title: "",
   organization: "",
   start-date: "",
   end-date: none,
   priority: 2,
-  items: ()
+  items: (),
 ) = context {
   let pages = state("target-pages").get()
-  if priority > (if pages == 1 { 1 } else { 3 }) { return }
-  
-  let date-range = if end-date != none {
-    start-date + " - " + end-date
-  } else {
-    start-date + " - current"  
-  }
-  
-  block(breakable: false)[
-    #grid(
-      columns: (1fr, auto),
-      align: (left, right),
-      row-gutter: 0.4em,
-      [*#title* - #organization], 
-      emph(date-range)
-    )
-    
-    #if items.len() > 0 {
-      v(-0.3em)
-      list(..items)
-    }
-  ]
+  if not should-show(priority, pages) { return }
+
+  let date-range = format-date-range(start-date, end-date)
+  let filtered-items = filter-prioritized-items(items, priority-threshold(pages))
+
+  let header = grid(
+    columns: (1fr, auto),
+    align: (left, right),
+    [*#title* - #organization], emph(date-range),
+  )
+
+  render-entry-block(header, filtered-items)
 }
 
-// Skill entry with priority
 #let skill(category, description, priority: 2) = context {
-  let pages = state("target-pages").get()  
-  if priority > (if pages == 1 { 1 } else { 3 }) { return }
+  let pages = state("target-pages").get()
+  if not should-show(priority, pages) { return }
   [*#category:* #description]
 }

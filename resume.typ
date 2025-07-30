@@ -6,7 +6,7 @@
   website: "www.willemvanhulle.tech",
   phone: "+32 479 080 252",
   profile-image: "profile.jpg",
-  target-pages: 2,
+  target-pages: 1,
 )
 
 #section("Experience")[
@@ -33,7 +33,7 @@
       pitem(
         title: "Language expertise",
         description: "Organized advanced Rust training on undocumented language features, performed deep technical code reviews.",
-        priority: 1,
+        priority: 2,
         languages: ("Rust",),
       ),
       pitem(
@@ -176,7 +176,7 @@
   #skill(
     "Lean computational riddles workshop",
     [Created and delivered workshop on solving computational problems with theorem proving. Interactive problem-solving using dependent types and formal verification. Materials at #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (#lang("Lean"))],
-    priority: 1,
+    priority: 2,
   )
 
   #skill(
