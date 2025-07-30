@@ -10,6 +10,8 @@
 // State to pass target-pages parameter to functions
 #let target-pages-state = state("target-pages", 2)
 
+#let lang(name) = raw(name)
+
 #let circular-profile-image(image-path, radius: 1.5em, dy: 1em) = {
   let size = radius * 2
   box(
@@ -88,11 +90,19 @@
   }
 }
 
-#let pitem(content, priority: 2) = (content: content, priority: priority)
+#let pitem(title: "", description: "", priority: 2, languages: ()) = {
+  let lang-list = if languages.len() > 0 {
+    " (" + languages.map(language => lang(language)).join(", ") + ")"
+  } else {
+    ""
+  }
+  (content: [*#title:* #description#lang-list], priority: priority)
+}
 
 
 #let experience(
   organization: "",
+  industry: "",
   location: "",
   title: "",
   start-date: "",
@@ -132,13 +142,81 @@
         columns: (1fr, auto),
         align: (left, right),
         row-gutter: 0.4em,
-        [*#organization*], [#location],
+        [*#organization* (#industry)], [#location],
         [#text(size: 10pt, style: "italic", title)], [#text(size: 10pt, style: "italic", date-range)],
       )
 
       #if filtered-items.len() > 0 {
         v(-0.3em)
         list(..filtered-items)
+      }
+    ]
+  }
+}
+
+#let education(
+  organization: "",
+  industry: "",
+  location: "",
+  degree: "",
+  thesis: none,
+  start-date: "",
+  end-date: none,
+  priority: 1,
+  courses: (),
+  volunteering: none,
+) = {
+  context {
+    let pages = target-pages-state.get()
+    if priority > priority-threshold(pages) { return }
+
+    let date-range = if end-date != none {
+      start-date + " - " + end-date
+    } else {
+      start-date + " - current"
+    }
+
+    let education-items = ()
+    if courses.len() > 0 {
+      let formatted-courses = if courses.len() == 1 {
+        // Single course: capitalize first letter
+        let first-course = courses.at(0)
+        let capitalized = upper(first-course.at(0)) + first-course.slice(1)
+        capitalized
+      } else {
+        // Multiple courses: commas and "and" before last
+        let capitalized-courses = ()
+        for course in courses {
+          capitalized-courses.push(upper(course.at(0)) + course.slice(1))
+        }
+        let all-but-last = capitalized-courses.slice(0, -1)
+        let last-course = capitalized-courses.at(-1)
+        all-but-last.join(", ") + " and " + last-course
+      }
+      education-items.push([*Courses:* #formatted-courses.])
+    }
+    if volunteering != none {
+      education-items.push([*Volunteering:* #volunteering])
+    }
+
+    block(breakable: false)[
+      #grid(
+        columns: (1fr, auto),
+        align: (left, right),
+        row-gutter: 0.4em,
+        [*#organization* (#industry)], [#location],
+        [
+          #text(size: 10pt, style: "italic", degree)
+          #if thesis != none [
+            #v(-0.5em)
+            #text(size: 9pt, fill: rgb(80, 80, 80), "Thesis: " + thesis)
+          ]
+        ], [#text(size: 10pt, style: "italic", date-range)],
+      )
+
+      #if education-items.len() > 0 {
+        v(-0.3em)
+        list(..education-items)
       }
     ]
   }
@@ -185,5 +263,3 @@
     [*#category:* #description]
   }
 }
-
-#let lang(name) = raw(name)
