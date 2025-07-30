@@ -5,7 +5,7 @@
   email: "willemvanhulle@protonmail.com",
   website: "www.willemvanhulle.tech",
   phone: "+32 479 080 252",
-  target-pages: 1,
+  target-pages: 2,
 )
 
 #section("Experience")[
@@ -18,7 +18,7 @@
     priority: 1,
     items: (
       pitem(
-        [*Distributed systems:* Built distributed freight train control system with dynamic presence detection, custom async iterator toolkit, real-time connectivity monitoring with emergency breaking, and GStreamer/WebRTC video streaming.],
+        [*Distributed systems:* Built remote freight train control system with dynamic presence detection, custom async iterator toolkit, real-time connectivity monitoring with emergency breaking, and GStreamer/WebRTC video streaming.],
         priority: 1,
       ),
       pitem(
@@ -145,7 +145,7 @@
 
   #skill(
     "Lean computational riddles workshop",
-    [Created and delivered workshop on solving computational problems with theorem proving. Interactive problem-solving using dependent types and formal verification. Materials at #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (July 2025) (#lang("Lean"))],
+    [Created and delivered workshop on solving computational problems with theorem proving. Interactive problem-solving using dependent types and formal verification. Materials at #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (#lang("Lean"))],
     priority: 1,
   )
 

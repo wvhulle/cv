@@ -1,8 +1,30 @@
 // Import configuration functions (not target-pages variable)
-#import "resume-length.typ": priority-threshold, item-threshold, max-experience-entries, max-projects, max-hobby-projects
+#import "resume-length.typ": (
+  priority-threshold,
+  item-threshold,
+  max-experience-entries,
+  max-projects,
+  max-hobby-projects,
+)
 
 // State to pass target-pages parameter to functions
 #let target-pages-state = state("target-pages", 2)
+
+#let circular-profile-image(image-path, radius: 1.5em, dy: 1em) = {
+  let size = radius * 2
+  box(
+    move(
+      dy: dy,
+      block(
+        height: size,
+        width: size,
+        clip: true,
+        radius: radius,
+        image(image-path, fit: "cover"),
+      ),
+    ),
+  )
+}
 
 #let resume(
   name: "",
@@ -36,10 +58,10 @@
   show link: it => underline(stroke: gray, it)
 
   grid(
-    columns: (1fr, 1fr),
+    columns: (2fr, 1fr),
     align: (left, right),
     [
-      #text(size: 22pt, weight: "bold", name)
+      #text(size: 22pt, weight: "bold", name) #h(0.5em) #circular-profile-image("profile.jpg", radius: 2em, dy: 1em)
     ],
     [
       #text(size: 10pt)[
@@ -52,7 +74,7 @@
 
   // Use Typst state to pass target-pages to other functions
   target-pages-state.update(target-pages)
-  
+
   body
 }
 
@@ -140,19 +162,19 @@
       start-date + " - current"
     }
 
-  block(breakable: false)[
-    #grid(
-      columns: (1fr, auto),
-      align: (left, right),
-      row-gutter: 0.4em,
-      [*#title* - #organization], [#emph(date-range)],
-    )
+    block(breakable: false)[
+      #grid(
+        columns: (1fr, auto),
+        align: (left, right),
+        row-gutter: 0.4em,
+        [*#title* - #organization], [#emph(date-range)],
+      )
 
-    #if items.len() > 0 {
-      v(-0.3em)
-      list(..items)
-    }
-  ]
+      #if items.len() > 0 {
+        v(-0.3em)
+        list(..items)
+      }
+    ]
   }
 }
 
