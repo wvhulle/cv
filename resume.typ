@@ -1,11 +1,13 @@
-#import "resume-template-style.typ": *
+#import "@local/flexible-resume:0.0.1": *
 
 #show: resume.with(
   name: "Willem Vanhulle",
   email: "willemvanhulle@protonmail.com",
   website: "www.willemvanhulle.tech",
   phone: "+32 479 080 252",
-  profile-image: "profile.jpg",
+  profile-image: image("profile.jpg"),
+  font: "Fira Sans",
+  font-code: "FiraCode Nerd Font Mono",
   target-pages: 1,
 )
 
@@ -14,26 +16,27 @@
     organization: "OTIV",
     industry: "Railway automation",
     location: "Ghent, Belgium",
-    title: "Mid-level software engineer",
+    title: "Software engineer",
     start-date: "Apr. 2024",
     end-date: "June 2025",
     priority: 1,
     items: (
       pitem(
         title: "Distributed systems",
-        description: [Built remote freight train control system with dynamic presence detection, custom async iterator toolkit, real-time connectivity monitoring with emergency breaking, and GStreamer/WebRTC video streaming.],
+        description: [Remote freight train control system, async iterator toolkit, real-time connectivity monitoring, video and telemetry streaming, state machines.],
         priority: 1,
+        languages: ("Rust", "Tokio"),
       ),
       pitem(
         title: "Build systems & CI",
         description: "Integrated LSP with Bazel, led Bazel→Cargo migration, wrote CI/CD pipelines from scratch, optimized pipeline runtime by 95%.",
-        priority: 1,
+        priority: 3,
         languages: ("Rust",),
       ),
       pitem(
         title: "Language expertise",
-        description: "Organized advanced Rust training on undocumented language features, performed deep technical code reviews.",
-        priority: 2,
+        description: "Organized advanced Rust training",
+        priority: 3,
         languages: ("Rust",),
       ),
       pitem(
@@ -42,15 +45,15 @@
         priority: 3,
       ),
       pitem(
-        title: "Real-time interfaces",
-        description: "Built multi-monitor native GUIs with streaming data table widgets and geographical map rendering using Slint.",
-        priority: 3,
-        languages: ("Rust",),
+        title: "Real-time user interfaces",
+        description: "Multi-monitor desktop application, live-streaming data tables.",
+        priority: 2,
+        languages: ("Rust", "Slint"),
       ),
       pitem(
         title: "Embedded systems",
         description: "Developed software for real-time hardware control (touchscreens, physical levers, sensors).",
-        priority: 3,
+        priority: 2,
       ),
     ),
   )
@@ -61,43 +64,32 @@
     location: "Ghent, Belgium",
     title: "Software engineer",
     start-date: "June 2021",
-    end-date: "January 2024",
+    end-date: "April 2024",
     priority: 1,
     items: (
       pitem(
         title: "Full-stack development",
-        description: "Built data collection platform with time-series visualization, implemented type-safe large-scale web applications.",
-        priority: 3,
-        languages: ("TypeScript", "JavaScript", "HTML", "SCSS"),
+        description: "Scientific web applications.",
+        priority: 1,
+        languages: ("TypeScript", "JavaScript", "HTML", "SCSS", "Svelte", "Rust", "R", "Python"),
       ),
       pitem(
-        title: "Robotics & embedded",
-        description: "Built industrial fermentation robots, interfaced with legacy hardware (25+ years) and modern sensors, migrated to async programming.",
+        title: "Industrial control",
+        description: "Automatic control industrial fermentation robot, integrate optical sensors.",
         priority: 1,
         languages: ("Python", "Rust", "C++"),
       ),
       pitem(
         title: "High-performance computing",
         description: "Implemented property-based testing for genetic data batch processing, optimized bioinformatics pipelines.",
-        priority: 2,
+        priority: 3,
         languages: ("Python",),
       ),
       pitem(
         title: "Database systems",
-        description: "Designed high-performance scientific databases (PostgreSQL, Neo4j), modeled complex scientific processes.",
-        priority: 3,
+        description: "Create scientific databases, model complex scientific processes.",
+        priority: 1,
         languages: ("R", "SQL"),
-      ),
-      pitem(
-        title: "Process automation",
-        description: "Automated cellular cloning and fermentation processes, implemented real-time process control systems.",
-        priority: 3,
-      ),
-      pitem(
-        title: "Embedded optimization",
-        description: "Optimized real-time embedded systems for Arduino/ESP32 microcontrollers.",
-        priority: 3,
-        languages: ("C",),
       ),
     ),
   )
@@ -128,8 +120,8 @@
     end-date: "Mar. 2025",
     priority: 1,
     items: (
-      [*Real-time monitoring:* Built heartbeat system detecting connection failures between remote operators and autonomous trains.],
-      [*Stream processing:* Designed pub-sub/TCP stream aggregator with automatic failover and emergency breaking triggers.],
+      [*Real-time monitoring:* Heartbeat system detecting connection failures.],
+      [*Stream processing:* Designed pub-sub stream aggregator to trigger emergency breaking.],
     ),
   )
 
@@ -140,8 +132,8 @@
     end-date: "April 2024",
     priority: 3,
     items: (
-      [*Systems API design:* Built type-safe serial communication API in Rust with comprehensive error handling for robotic systems.],
-      [*Real-time control systems:* Implemented PID-controlled process automation with anomaly detection for 48-hour continuous operation.],
+      [*Cross-language development*: Comprehensive error handling and testing.],
+      [*Real-time industrial control:* Control 48h fermentation process.],
     ),
   )
 
@@ -161,28 +153,28 @@
 #section("Hobby projects", priority: 1)[
   #skill(
     "Splitting data streams",
-    [Designed runtime-agnostic async stream combinator using low-level primitives (Waker, Poll, Pin). Published as open-source #link("https://crates.io/crates/forked_stream", "crate"). (#lang("Rust"))],
+    [Async runtime-agnostic stream combinator library. See #link("https://crates.io/crates/clone-stream", "crate") and #link("https://eurorust.eu/talks/make-your-own-stream-operators/", "conference talk at EuroRust"). (#lang("Rust"))],
     priority: 1,
   )
 
   #skill(
     "Smart plant pot workshop",
-    [Organise and co-lead a workshop on creating a smart plant pot watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy. Integrated USB serial communication and debugging (with JTAG or hardware debug probes), analogue sensing and wireless network notifications. Code at #link("https://github.com/sysghent/plant-pot", "GitHub"). (#lang("Rust"))],
-    priority: 2,
+    [Watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy: see #link("https://github.com/sysghent/plant-pot", "GitHub"). (#lang("Rust"), #lang("Embassy"))],
+    priority: 1,
   )
 
 
 
   #skill(
-    "Lean computational riddles workshop",
-    [Created and delivered workshop on solving computational problems with theorem proving. Interactive problem-solving using dependent types and formal verification. Materials at #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (#lang("Lean"))],
-    priority: 2,
+    "Lean riddles workshop",
+    [Interactive problem-solving using dependent types. See #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (#lang("Lean"))],
+    priority: 1,
   )
 
   #skill(
     "Probability arithmetic in Lean",
-    [Developed library for simplifying probability calculations in formal mathematics. Extended real number arithmetic for probabilistic proofs. Available at #link("https://github.com/wvhulle/ennreal-arith", "GitHub"). (#lang("Lean"))],
-    priority: 1,
+    [Simplify probability calculations in formal mathematics. Available at #link("https://github.com/wvhulle/ennreal-arith", "GitHub"). (#lang("Lean"), #lang("Mathlib"))],
+    priority: 2,
   )
 ]
 
@@ -213,25 +205,36 @@
 
   #education(
     organization: "University of Utrecht",
-    industry: "University",
+    industry: "Summer School",
     location: "Utrecht, Netherlands",
-    degree: "Summer School: Formalizing Mathematics in Lean",
+    degree: "Formalizing mathematics in Lean ",
+    thesis: "Formal bayesian inference in Monty Hall",
     start-date: "July 2025",
+    end-date: "July 2025",
     priority: 1,
-    courses: ("advanced study of theorem proving", "dependent type theory", "mathematical formalization"),
+    courses: ("Lean", "proof-assistants", "dependent type theory", "formal methods", "functional programming"),
   )
 
   #education(
     organization: "KU Leuven",
     industry: "University",
     location: "Leuven, Belgium",
-    degree: "Master of Science in Pure Mathematics (Eng.)",
-    thesis: "Thesis on functional programming languages",
+    degree: "Master Pure Mathematics",
+    thesis: "Cubical type theory at DistriNet",
     start-date: "Sep. 2017",
     end-date: "June 2019",
     priority: 1,
-    courses: ("algebra", "analysis", "discrete mathematics", "differential geometry", "unified geometry", "topology"),
-    volunteering: "Coordinator of Groot-Begijnhof Leuven student association.",
+    courses: (
+      "algebra",
+      "analysis",
+      "discrete mathematics",
+      "differential geometry",
+      "unified geometry",
+      "topology",
+      "machine learning",
+      "neural networks",
+    ),
+    volunteering: "Coordinator student association.",
   )
 
   #education(
@@ -239,7 +242,7 @@
     industry: "University",
     location: "Brussels, Belgium",
     degree: "Bachelor of Science in Mathematics, Minor Computer Science",
-    thesis: "Thesis on unsupervised learning",
+    thesis: "Functional analysis and machine learning",
     start-date: "Sep. 2013",
     end-date: "Aug. 2017",
     priority: 4,
@@ -259,7 +262,7 @@
 #section("Hobbies", priority: 1)[
   #skill(
     "Community founder",
-    [Founder of "Systems Programming Ghent" (#link("https://sysghent.be", "sysghent.be")): organise networking events, in-depth talks and give workshops in Ghent about systems programming languages such as Rust and C++.],
+    [Founder of #link("https://sysghent.be", "sysghent.be"). Talks, workshops, networking in Ghent about systems programming.],
     priority: 1,
   )
 
