@@ -8,7 +8,7 @@
   profile-image: image("profile.jpg"),
   font: "Fira Sans",
   font-code: "FiraCode Nerd Font Mono",
-  target-pages: 1,
+  target-pages: 2,
 )
 
 #section("Experience")[
@@ -28,10 +28,16 @@
         languages: ("Rust", "Tokio"),
       ),
       pitem(
-        title: "Build systems & CI",
-        description: "Integrated LSP with Bazel, led Bazel→Cargo migration, wrote CI/CD pipelines from scratch, optimized pipeline runtime by 95%.",
-        priority: 3,
+        title: "Developer tooling & IDE integration",
+        description: "Created custom tooling to integrate Rust LSP, Clippy linting, and formatting with Bazel build system. Implemented lint-on-save functionality. Led technical migration from Bazel to Cargo for better developer experience.",
+        priority: 2,
         languages: ("Rust",),
+      ),
+      pitem(
+        title: "Build optimization & CI",
+        description: "Optimized large Rust project build times, wrote CI/CD pipelines from scratch, optimized pipeline runtime by 95%.",
+        priority: 3,
+        languages: ("Rust", "Bash"),
       ),
       pitem(
         title: "Language expertise",
@@ -68,10 +74,16 @@
     priority: 1,
     items: (
       pitem(
-        title: "Full-stack development",
-        description: "Scientific web applications.",
+        title: "Collaborative scientific interfaces",
+        description: "Built large-scale collaborative web application for biotechnological process data management. Real-time multi-user data grids, D3.js time-series visualizations, automated data parsing from scientific instruments.",
         priority: 1,
-        languages: ("TypeScript", "JavaScript", "HTML", "SCSS", "Svelte", "Rust", "R", "Python"),
+        languages: ("TypeScript", "JavaScript", "Svelte", "D3.js"),
+      ),
+      pitem(
+        title: "Mathematical document authoring",
+        description: "Experience with mathematical notation rendering using LaTeX and (later) Typst for scientific documentation and interfaces.",
+        priority: 3,
+        languages: ("LaTeX", "Typst"),
       ),
       pitem(
         title: "Industrial control",
@@ -88,25 +100,26 @@
       pitem(
         title: "Database systems",
         description: "Create scientific databases, model complex scientific processes.",
-        priority: 1,
+        priority: 3,
         languages: ("R", "SQL"),
       ),
     ),
   )
 
   #experience(
-    organization: "CVO",
+    organization: "Independent & school",
     industry: "Education",
-    location: "Leuven, Belgium",
-    title: "Mathematics guest lecturer",
-    start-date: "Sept. 2020",
+    location: "Brussels & Leuven, Belgium",
+    title: "Part-time mathematics lecturer & tutor",
+    start-date: "Nov. 2014",
     end-date: "Jan. 2021",
     priority: 2,
     items: (
       pitem(
-        title: "Teaching",
-        description: "Mathematics and programming courses and document preparation.",
+        title: "Mathematics education",
+        description: "Taught analysis, statistics, and linear algebra as tutor.",
         languages: ("Python", "LaTeX"),
+        priority: 1,
       ),
     ),
   )
@@ -121,7 +134,7 @@
     priority: 1,
     items: (
       [*Real-time monitoring:* Heartbeat system detecting connection failures.],
-      [*Stream processing:* Designed pub-sub stream aggregator to trigger emergency breaking.],
+      [*Stream processing:* Stream aggregator to trigger emergency breaking.],
     ),
   )
 
@@ -130,7 +143,7 @@
     organization: "Inbiose",
     start-date: "Oct. 2023",
     end-date: "April 2024",
-    priority: 3,
+    priority: 2,
     items: (
       [*Cross-language development*: Comprehensive error handling and testing.],
       [*Real-time industrial control:* Control 48h fermentation process.],
@@ -150,31 +163,63 @@
   )
 ]
 
-#section("Hobby projects", priority: 1)[
+#section("Formal verification & theorem proving", priority: 1)[
   #skill(
-    "Splitting data streams",
-    [Async runtime-agnostic stream combinator library. See #link("https://crates.io/crates/clone-stream", "crate") and #link("https://eurorust.eu/talks/make-your-own-stream-operators/", "conference talk at EuroRust"). (#lang("Rust"))],
+    "Lean community building",
+    [Started first Lean event in Ghent through workshop. Active on official Lean communication channels (Zulip). (#lang("Lean"))],
     priority: 1,
   )
 
   #skill(
-    "Smart plant pot workshop",
-    [Watering system with a Raspberry Pi Pico / ESP32c6 and async Embassy: see #link("https://github.com/sysghent/plant-pot", "GitHub"). (#lang("Rust"), #lang("Embassy"))],
-    priority: 1,
-  )
-
-
-
-  #skill(
-    "Lean riddles workshop",
-    [Interactive problem-solving using dependent types. See #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (#lang("Lean"))],
+    "Lean metaprogramming",
+    [Developed probability arithmetic library for formal mathematics. To be merged in Mathlib. See #link("https://github.com/wvhulle/ennreal-arith", "GitHub"). (#lang("Lean"), #lang("Mathlib"))],
     priority: 1,
   )
 
   #skill(
-    "Probability arithmetic in Lean",
-    [Simplify probability calculations in formal mathematics. Available at #link("https://github.com/wvhulle/ennreal-arith", "GitHub"). (#lang("Lean"), #lang("Mathlib"))],
-    priority: 2,
+    "Educational theorem proving",
+    [Created interactive problem-solving workshop using dependent types. Implemented custom elaboration, delaboration, and unexpanders. See #link("https://github.com/wvhulle/learn-lean-riddles", "GitHub"). (#lang("Lean"))],
+    priority: 1,
+  )
+]
+
+#section("Research & publications", priority: 1)[
+  #skill(
+    "Academic writing & technical blogging",
+    [Published master's thesis on cubical type theory and active technical blog covering formal methods and programming. See #link("https://scriptiebank.be/scriptie/2019/models-univalence-cubical-sets", "thesis") and #link("https://willemvanhulle.tech/blog/", "blog"). (#lang("Agda"), #lang("Coq"))],
+    priority: 1,
+  )
+
+  #skill(
+    "Conference presentations & community leadership",
+    [Presenting at EuroRust 2025, attended RustWeek 2025. Founded and organizes technical communities (sysghent.be). Regular speaker at technical meetups.],
+    priority: 1,
+  )
+]
+
+#section("Open-source contributions", priority: 1)[
+  #skill(
+    "NixOS ecosystem contributions",
+    [Active contributor to NixOS nixpkgs repository. Packaged MCP server for Lean LSP integration with Claude Code. See #link("https://github.com/NixOS/nixpkgs/pull/424646", "pull request"). (#lang("Nix"))],
+    priority: 1,
+  )
+
+  #skill(
+    "Rust community organizing",
+    [Organized in-person Rust events, posted to official Rust mailing list. See #link("https://github.com/wvhulle/this-week-in-rust", "contributions"). Founded sysghent.be community for systems programming.],
+    priority: 3,
+  )
+
+  #skill(
+    "Published libraries & tools",
+    [Functional stream processing library using async iterators. Conference talk at EuroRust. See #link("https://crates.io/crates/clone-stream", "crate") and #link("https://eurorust.eu/talks/make-your-own-stream-operators/", "talk"). (#lang("Rust"))],
+    priority: 1,
+  )
+
+  #skill(
+    "Bug reports & quality assurance",
+    [Filed detailed bug reports with minimal working examples for JavaScript libraries and other open-source projects.],
+    priority: 3,
   )
 ]
 
@@ -220,19 +265,18 @@
     industry: "University",
     location: "Leuven, Belgium",
     degree: "Master Pure Mathematics",
-    thesis: "Cubical type theory at DistriNet",
+    thesis: "Models of univalence in cubical sets - one year research at DistriNet on formalising algebra using cubical type theory",
     start-date: "Sep. 2017",
     end-date: "June 2019",
     priority: 1,
     courses: (
+      "cubical type theory",
+      "category theory",
+      "mathematical logic",
       "algebra",
-      "analysis",
-      "discrete mathematics",
-      "differential geometry",
-      "unified geometry",
       "topology",
-      "machine learning",
-      "neural networks",
+      "formal methods",
+      "programming language semantics",
     ),
     volunteering: "Coordinator student association.",
   )
@@ -245,15 +289,15 @@
     thesis: "Functional analysis and machine learning",
     start-date: "Sep. 2013",
     end-date: "Aug. 2017",
-    priority: 4,
+    priority: 2,
     courses: (
-      "functional programming",
+      "functional programming (Lisp, Scheme)",
+      "philosophy of mathematics (presented on Coq)",
+      "compiler construction (Haskell)",
       "algorithms and data-structures",
-      "logic",
+      "mathematical logic",
       "analysis",
       "algebra",
-      "philosophy",
-      "geometry",
     ),
     volunteering: "Managing computer rooms and mathematics tutoring.",
   )
