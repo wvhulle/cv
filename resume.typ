@@ -29,7 +29,7 @@
       ),
       pitem(
         title: "Developer tooling & IDE integration",
-        description: "Created custom tooling to integrate Rust LSP, Clippy linting, and formatting with Bazel build system. Implemented lint-on-save functionality. Led technical migration from Bazel to Cargo for better developer experience.",
+        description: "Created custom declarative tooling to integrate Rust LSP, Clippy linting, and formatting with Bazel build system. Implemented lint-on-save functionality. Led achitectural migration from Bazel to Cargo for better developer experience.",
         priority: 2,
         languages: ("Rust",),
       ),
@@ -52,13 +52,13 @@
       ),
       pitem(
         title: "Real-time user interfaces",
-        description: "Multi-monitor desktop application, live-streaming data tables.",
+        description: "Architect multi-monitor desktop application, create live-streaming data tables for operators.",
         priority: 2,
         languages: ("Rust", "Slint"),
       ),
       pitem(
         title: "Embedded systems",
-        description: "Developed software for real-time hardware control (touchscreens, physical levers, sensors).",
+        description: "Developed software interfaces with real-time hardware control for trains (touchscreens, physical levers, sensors).",
         priority: 2,
       ),
     ),
@@ -192,7 +192,7 @@
 
   #skill(
     "Conference presentations & community leadership",
-    [Presenting at EuroRust 2025, attended RustWeek 2025. Founded and organizes technical communities (sysghent.be). Regular speaker at technical meetups.],
+    [Presented at EuroRust 2025 conference about advanced stream processing in Rust (#link("https://youtu.be/tEFZivACllI?si=IagfJADE0y30QOYH")[video]). Founded and organizes technical communities (sysghent.be). Regular speaker at technical meetups.],
     priority: 1,
   )
 ]
@@ -306,17 +306,21 @@
 #section("Hobbies", priority: 1)[
   #skill(
     "Community founder",
-    [Founder of #link("https://sysghent.be", "sysghent.be"). Talks, workshops, networking in Ghent about systems programming.],
+    [Founder of #link("https://sysghent.be", "sysghent.be"). Talks, workshops, networking in Ghent about systems and functional programming.],
     priority: 1,
   )
 
   #skill(
     "Electronics",
-    [Assemble electronical circuits with simple sensors. Some experience with ARM and RISC-V boards such as ESP32c6, Arduino Uno (AVR), Raspberry Pico (RP2040).],
+    [Assemble electronical circuits with simple sensors. Some experience with ARM and RISC-V boards such as ESP32c6, Arduino Uno (AVR), Raspberry Pico (RP2040). ],
     priority: 2,
   )
 
-
+  #skill(
+    "Linux",
+    [Declarative Linux operating system configuration with NixOS. Advanced functional shell scripting with NuShell, setting up SystemD services, software packaging and Linux driver management.],
+    priority: 2,
+  )
 
   #skill(
     "Visit developer conferences",
