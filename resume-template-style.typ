@@ -1,1 +1,0 @@
-/home/wvhulle/Code/flexible-resume/resume-template-style.typ
