@@ -56,7 +56,7 @@
       ),
       pitem(
         title: "Learning and development",
-        description: "Specialised Rust training for internal Rust teams about asynchronous and generic programming.",
+        description: "Rust training for internal teams about asynchronous and generic programming.",
         priority: 2,
         languages: ("Rust",),
       ),
@@ -195,13 +195,13 @@
   //
   #skill(
     "Nu-Lint linter for Nu-Shell",
-    [A helpful linter for #link("https://www.nushell.sh/")[NuShell] that aims to help new users to use the top of the can in this new scripting language. Very fast and implemented in Rust. Contains more than 50 lint rules with fixes to help developers, see #link("https://www.nushell.sh/")[download page].],
+    [A helpful linter for #link("https://www.nushell.sh/")[NuShell] that aims to help new users to use the top of the can in this new scripting language. Very fast and implemented in Rust. Contains more than 50 lint rules with fixes to help developers, see #link("https://crates.io/crates/nu-lint")[download page].],
     priority: 1,
   )
 
   #skill(
     "Clone-Stream stream processing library",
-    [A functional approach to data processing with a type of async iterators. Implemented in Rust with minimal dependencies. Gave a conference talk about this project at #link("https://eurorust.eu/talks/make-your-own-stream-operators/", "EuroRust in Paris"). You can download it from #link("https://crates.io/crates/clone-stream", "crates.io").],
+    [A functional approach to data processing with a type of async iterators. Implemented in Rust with minimal dependencies. Gave a conference talk about this project at #link("https://eurorust.eu/talks/make-your-own-stream-operators/", "EuroRust in Paris"). You can download it from #link("https://crates.io/crates/clone-stream", "crates.io"), view #link("https://youtu.be/tEFZivACllI?si=ydzQWmQnI9mGnY_e")[live recording] or #link("https://github.com/wvhulle/streams-eurorust-2025")[corrected slides].],
     priority: 1,
   )
 
