@@ -13,5 +13,6 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
   "tinymist.formatterMode": "typstyle",
-  "tinymist.lint.enabled": true
+  "tinymist.lint.enabled": true,
+  "tinymist.lint.when": "onType"
 }
