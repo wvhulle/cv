@@ -56,7 +56,7 @@
   live: none,
 ) = {
   let languages = if languages.len() > 0 {
-    "(" + languages.map(a => text(style: "italic", a)).join(", ") + ")"
+    "(" + languages.map(a => text(a)).join(", ") + ")"
   } else { none }
   let methods = if skills.len() > 0 {
     "Skills: " + skills.map(a => text(style: "italic", a)).join(", ")

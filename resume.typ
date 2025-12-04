@@ -61,11 +61,11 @@
       languages: ("Rust", "Nix", "Bash", "Python"),
       skills: ("Git", "DevOps"),
     ),
-    project(
-      title: "Learning and development",
-      description: "Professional training for internal software and embedded teams.",
-      languages: ("Rust",),
-    ),
+    // project(
+    //   title: "Learning and development",
+    //   description: "Professional training for internal software and embedded teams.",
+    //   languages: ("Rust",),
+    // ),
     project(
       title: "Native desktop user interfaces",
       description: "Architect multi-monitor native Rust desktop application. Design and maintain front-end components for displaying live train data. ",
@@ -85,9 +85,9 @@
   items: (
     project(
       title: "Collaborative scientific front-end",
-      description: [Collaborative spreadsheet web interface and database. Datagrid caching and conflict resolution on restore. automated data parsing from scientific instruments.],
+      description: [Collaborative spreadsheet web interface and database. Datagrid caching and conflict resolution on restore. ],
       languages: ("TypeScript",),
-      skills: ("Svelte", "D3.js"),
+      skills: ("NodeJS", "WebSocket", "JSON-RPC", "CRDTs", "data collection"),
     ),
     project(
       title: "Industrial robotic control",
@@ -98,25 +98,25 @@
   ),
 )
 
-#experience(
-  organization: "High-school and university",
-  industry: "Education",
-  location: "Brussels & Leuven, Belgium",
-  title: "Part-time mathematics lecturer & tutor",
-  start-date: "Nov. 2014",
-  end-date: "Jan. 2021",
-  items: (
-    project(
-      title: "Part-time teacher",
-      description: [Teach algebra to refugees and adults with learning difficulties about algebra. Create engaging lessons and exercises.],
-      languages: ("Python", "LaTeX"),
-    ),
-    project(
-      title: "Freelance tutor",
-      description: [Tutor high-school and university students in analysis, statistics, linear algebra.],
-    ),
-  ),
-)
+// #experience(
+//   organization: "High-school and university",
+//   industry: "Education",
+//   location: "Brussels & Leuven, Belgium",
+//   title: "Part-time mathematics lecturer & tutor",
+//   start-date: "Nov. 2014",
+//   end-date: "Jan. 2021",
+//   items: (
+//     project(
+//       title: "Part-time teacher",
+//       description: [Teach algebra to refugees and adults with learning difficulties about algebra. Create engaging lessons and exercises.],
+//       languages: ("Python", "LaTeX"),
+//     ),
+//     project(
+//       title: "Freelance tutor",
+//       description: [Tutor high-school and university students in analysis, statistics, linear algebra.],
+//     ),
+//   ),
+// )
 
 
 
@@ -129,6 +129,7 @@
   languages: ("Nu",),
   skills: ("parsing", "static analysis", "type inference"),
   source: "https://crates.io/crates/nu-lint",
+  slides: "https://github.com/wvhulle/nu-glue",
 )
 
 #project(
@@ -139,11 +140,12 @@
   docs: "https://docs.rs/clone-stream/0.4.0",
   slides: "https://github.com/wvhulle/streams-eurorust-2025",
   live: "https://youtu.be/tEFZivACllI?si=ydzQWmQnI9mGnY_e",
+  source: "https://github.com/wvhulle/clone-stream",
 )
 
 #project(
   title: "ENNReal-Arith",
-  description: [This project should help Lean developers formalize new facts of probability theory.],
+  description: [Help mathematicians and computer scientists formalize probability theory.],
   languages: ("Lean",),
   skills: ("theorem proving", "formal verification"),
   source: "https://github.com/wvhulle/ennreal-arith",
@@ -166,8 +168,8 @@
 )
 
 = Spoken languages
-#project(title: "Native", description: "English, Dutch")
-#project(title: "Intermediate", description: "French, German")
+#project(title: "Native", description: "English, Dutch.")
+#project(title: "Intermediate", description: "French, German.")
 
 
 = Education
@@ -200,14 +202,14 @@
   start-date: "Sep. 2017",
   end-date: "June 2019",
   courses: (
-    "cubical type theory in Agda",
+    // "cubical type theory in Agda",
     "category theory",
     "algebra",
-    "encryption",
+    "cryptography",
     "discrete mathematics",
     "algebraic topology",
     "differential geometry",
-    "programming language semantics",
+    // "programming language semantics",
     "operator algebras",
   ),
   volunteering: "Coordinator student association.",
@@ -223,15 +225,15 @@
   end-date: "Aug. 2017",
   courses: (
     "functional programming in Scheme",
-    "philosophy of mathematics in Coq",
-    "compiler construction and Intel 8086 assembly",
+    // "philosophy of mathematics in Coq",
+    "computer systems in Intel 8086 assembly",
     "database design",
-    "algorithms and data-structures in Lisp",
-    "mathematical logic",
-    "analysis",
+    "algorithms and data-structures in Scheme",
+    // "mathematical logic",
+    // "analysis",
     "algebra",
-    "information theory",
-    "encryption",
+    "encoding and decoding",
+    "cryptography",
     "numerical methods",
     "differential equations",
     "statistics in R",
